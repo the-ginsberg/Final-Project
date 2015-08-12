@@ -29,9 +29,13 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+
+  <div>
+    <%= link_to 'Log Out', '/sign_out' %>
+  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%# render "devise/shared/links" %>
 
 <br>
 <br>
@@ -66,5 +70,5 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%# render "devise/shared/links" %>
 </div>
