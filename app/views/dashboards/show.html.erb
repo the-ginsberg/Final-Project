@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dashboard.title %>
+</p>
+
+<p>
+  <strong>Calendar:</strong>
+  <%= @dashboard.calendar %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @dashboard.user %>
+</p>
+
+<%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
+<%= link_to 'Back', dashboards_path %>
