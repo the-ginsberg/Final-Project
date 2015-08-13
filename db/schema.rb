@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813025024) do
+ActiveRecord::Schema.define(version: 20150813025349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20150813025024) do
   end
 
   add_index "dashboards", ["user_id"], name: "index_dashboards_on_user_id", using: :btree
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "title"
+    t.string   "attachment"
+    t.integer  "dashboard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "documents", ["dashboard_id"], name: "index_documents_on_dashboard_id", using: :btree
 
   create_table "news_feeds", force: :cascade do |t|
     t.string   "title"
@@ -55,5 +65,6 @@ ActiveRecord::Schema.define(version: 20150813025024) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "dashboards", "users"
+  add_foreign_key "documents", "dashboards"
   add_foreign_key "news_feeds", "dashboards"
 end
