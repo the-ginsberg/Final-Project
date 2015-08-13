@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news_feed.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @news_feed.body %>
+</p>
+
+<p>
+  <strong>Dashboard:</strong>
+  <%= @news_feed.dashboard_id %>
+</p>
+
+<p>
+  <strong>Dashboard:</strong>
+  <%= @news_feed.dashboard %>
+</p>
+
+<%= link_to 'Edit', edit_news_feed_path(@news_feed) %> |
+<%= link_to 'Back', news_feeds_path %>
