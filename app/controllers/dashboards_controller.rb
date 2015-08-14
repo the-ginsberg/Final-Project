@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
+    @news_feeds = NewsFeed.all
   end
 
   # GET /dashboards/1
