@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="my_dashboard">My Dashboards</h1>
+<h1 class="my_dashboard">Current Dashboard</h1>
+
 <p class="new_dashboard"><%= link_to 'New Dashboard', new_dashboard_path %></p>
 
 <table>
@@ -38,14 +39,12 @@
 </div>
 
 <div class ="news_feed">
-  <p>This space is reserved for linking to the news feed.</p>
-  <br>
   <%= link_to 'News_feed', news_feeds_path %>
   <br>
   <br>
   <% @news_feeds.each do |nf| %>
   <table>
-    <thead><strong><%= nf.title %></strong></thead>
+    <thead><strong><%= link_to((nf.title), news_feeds_path) %></strong></thead>
     <tr>
       <td><%= nf.created_at.strftime("%B %d, %Y") %></td>
       <td class = "table_news_body"><%= nf.body %></td>
@@ -53,15 +52,21 @@
 </table>
 <br>
   <% end %>
-
-
-
-
 </div>
+
+
+
 
 <div class ="documents">
-  <p>This space is reserved for linking to the documents section.</p>
-  <%= link_to 'Documents', documents_path %>
-
-
+  <p>This space is reserved for linking to documents.</p>
+  <p><%= link_to 'document', documents_path %>
+  <br>
+  <br>
+  <% @documents.each do |d| %>
+  <div class = document>
+  <p><strong><%= d.title %></strong>
+  <br><%= d.attachment %></p>
 </div>
+  <% end %>
+  <br>
+  </div>
