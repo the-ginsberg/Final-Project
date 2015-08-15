@@ -1,5 +1,9 @@
-@import 'materialize';
+@import 'user.scss';
 
 li {
   display: inline;
+}
+
+.collapsible-header {
+float: right;
 }
