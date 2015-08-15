@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813025349) do
+ActiveRecord::Schema.define(version: 20150815181402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "attachment_uid"
+    t.string   "title"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "dashboards", force: :cascade do |t|
     t.string   "title"
@@ -45,6 +52,13 @@ ActiveRecord::Schema.define(version: 20150813025349) do
   end
 
   add_index "news_feeds", ["dashboard_id"], name: "index_news_feeds_on_dashboard_id", using: :btree
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "url"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
