@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20150815181402) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attachments", force: :cascade do |t|
-    t.string   "attachment_uid"
-    t.string   "title"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "dashboards", force: :cascade do |t|
     t.string   "title"
     t.string   "calendar"
