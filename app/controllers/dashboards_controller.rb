@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
   def index
     @dashboards = Dashboard.all
     @news_feeds = NewsFeed.all
-    @documents = Document.all
+    @uploads = Upload.all
   end
 
   # GET /dashboards/1

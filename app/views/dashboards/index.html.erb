@@ -57,16 +57,16 @@
 
 
 
-<div class ="documents">
+<div class ="upload">
   <p>This space is reserved for linking to documents.</p>
-  <p><%= link_to 'document', documents_path %>
-  <br>
-  <br>
-  <% @documents.each do |d| %>
-  <div class = document>
-  <p><strong><%= d.title %></strong>
-  <br><%= d.attachment %></p>
-</div>
+
+  <% @uploads.each do |u| %>
+  <div class="upload_file">
+    <ul class="file_list">
+      <li><i class="fa fa-file-text-o fa-2x"></i></li>
+      <li><%= link_to (u.name), uploads_path %></li>
+    </ul>
   <% end %>
-  <br>
+</div>
+
   </div>
