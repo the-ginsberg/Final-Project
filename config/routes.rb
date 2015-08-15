@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resource :users
   root 'user#home'
 
-  get "/wyncode" => redirect("http://wyncode.co/")
+  get "/wyncode" => redirect("https://wyncode.co/")
   get "/about" => 'user#about'
-  
+
 
 end
