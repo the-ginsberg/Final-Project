@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'user#home'
 
   get "/wyncode" => redirect("http://wyncode.co/")
+  get "/about" => 'user#about'
+  
 
-  # devise_scope :user do get "/sign_out" => "devise/sessions#destroy"
-  # end
 end
