@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :uploads
   resources :news_feeds
   resources :dashboards
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   resource :users
   root 'user#home'
 
