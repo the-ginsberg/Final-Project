@@ -9,22 +9,16 @@
 
 <!-- Sign Up Section -->
   <% if user_signed_in? %>
-    <li><div class="navright"><%= link_to 'Profile', edit_user_registration_path %></div></li>
+    <li><%= link_to 'Profile', edit_user_registration_path %></li>
   <% else %>
-    <li>
-      <div class="collapsible-header">SignUp</div>
-      <div class="collapsible-body"><p><%= render '/user/new' %></p></div>
-    </li>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
   <% end %>
 
 <!-- Login Section -->
   <% if user_signed_in? %>
-    <li><div class="navright"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> |</div></li>
+    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
   <% else %>
-    <li>
-      <div class="collapsible-header">Login</div>
-      <div class="collapsible-body"><p><%= render '/user/login' %></p></div>
-    </li>
+    <li><%= link_to 'Login', new_user_session_path %></li>
   <% end %>
 
 </ul>

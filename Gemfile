@@ -13,8 +13,6 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'materialize-sass'
-
 
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
