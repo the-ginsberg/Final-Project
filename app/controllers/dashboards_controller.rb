@@ -12,11 +12,8 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1
   # GET /dashboards/1.json
   def show
-    if @news_feed.dashboard_id == dashboard_id
-      format.html { render :show }
-    else
-      format.html { redirect_to @dashboard, notice: 'Dashboard was successfully updated.' }
-    end
+    @news_feeds = NewsFeed.new
+    @uploads = Upload.new
   end
 
   # GET /dashboards/new
