@@ -6,5 +6,43 @@
 </p>
 
 
+<div class ="calendar">
+  <p>This space is reserved for linking to the calendar.</p>
+
+</div>
+
+<div class ="news_feed">
+  <%= link_to 'News_feed', news_feeds_path %>
+  <br>
+  <br>
+  <% @news_feeds.each do |nf| %>
+  <table>
+    <thead><strong><%= link_to((nf.title), news_feeds_path) %></strong></thead>
+    <tr>
+      <td><%= nf.created_at.strftime("%B %d, %Y") %></td>
+      <td class = "table_news_body"><%= nf.body %></td>
+    </tr>
+</table>
+<br>
+  <% end %>
+</div>
+
+
+
+
+<div class ="upload">
+  <p>This space is reserved for linking to uploads.</p>
+
+  <% @uploads.each do |u| %>
+  <div class="upload_file">
+    <ul class="file_list">
+      <li><i class="fa fa-file-text-o fa-2x"></i></li>
+      <li><%= link_to (u.name), uploads_path %></li>
+    </ul>
+  <% end %>
+</div>
+
+  </div>
+
 <%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
 <%= link_to 'Back', dashboards_path %>

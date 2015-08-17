@@ -12,6 +12,11 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1
   # GET /dashboards/1.json
   def show
+    if @news_feed.dashboard_id == dashboard_id
+      format.html { render :show }
+    else
+      format.html { redirect_to @dashboard, notice: 'Dashboard was successfully updated.' }
+    end
   end
 
   # GET /dashboards/new
@@ -71,6 +76,6 @@ class DashboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dashboard_params
-      params.require(:dashboard).permit(:title, :calendar, :user_id)
+      params.require(:dashboard).permit(:title, :user_id)
     end
 end
