@@ -1,5 +1,6 @@
 class Dashboard < ActiveRecord::Base
-  belongs_to :user
+  has_many :user_dashboards
+  has_many :users, through: :user_dashboards 
   has_many :uploads
   has_many :news_feeds
 end
