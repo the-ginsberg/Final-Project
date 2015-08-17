@@ -12,7 +12,7 @@
 </div>
 
 <div class ="news_feed">
-  <%= link_to 'News_feed', news_feeds_path %>
+  <%= link_to 'New Event', new_news_feed_path %>
   <br>
   <br>
   <% @dashboard.news_feeds.each do |nf| %>
@@ -37,6 +37,10 @@
       <li><i class="fa fa-file-text-o fa-2x"></i></li>
       <li><%= link_to (u.name), uploads_path %></li>
     </ul>
+  <% end %>
+  <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
+      <%= file_field_tag :file  %>
+      <%= submit_tag 'Upload file' %>
   <% end %>
 </div>
 
