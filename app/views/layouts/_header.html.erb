@@ -21,4 +21,10 @@
     <li><%= link_to 'Login', new_user_session_path %></li>
   <% end %>
 
+  <% if user_signed_in? %>
+    <li><%= link_to('Dashboards', dashboards_path) %></li>
+  <% end %>
+
+
+
 </ul>

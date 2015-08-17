@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  
+
   def index
     @uploads = Upload.all
   end
@@ -15,13 +15,13 @@ class UploadsController < ApplicationController
     )
 
     # Create an object for the upload
-    @upload = Upload.new(
+    @uploads = Upload.new(
             url: obj.public_url,
         name: obj.key
         )
 
     # Save the upload
-    if @upload.save
+    if @uploads.save
       redirect_to uploads_path, success: 'File successfully uploaded'
     else
       flash.now[:notice] = 'There was an error'
