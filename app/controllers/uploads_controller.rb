@@ -16,13 +16,13 @@ class UploadsController < ApplicationController
 
     # Create an object for the upload
     @uploads = Upload.new(
-            url: obj.public_url,
-        name: obj.key
-        )
+                          url: obj.public_url,
+                          name: obj.key
+                          )
 
     # Save the upload
     if @uploads.save
-      redirect_to uploads_path, success: 'File successfully uploaded'
+      redirect_to dashboard_path(params[:dashboard_id]), success: 'File successfully uploaded'
     else
       flash.now[:notice] = 'There was an error'
       render :new
