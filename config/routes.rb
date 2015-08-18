@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :uploads
   resources :news_feeds
   resources :dashboards
+  resources :user_dashboards
   devise_for :users
   resource :users
   root 'user#home'

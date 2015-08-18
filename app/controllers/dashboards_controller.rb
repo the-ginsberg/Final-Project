@@ -29,6 +29,7 @@ class DashboardsController < ApplicationController
   # POST /dashboards.json
   def create
     @dashboard = Dashboard.new(dashboard_params)
+    @dashboard.set_user(current_user)
 
     respond_to do |format|
       if @dashboard.save
