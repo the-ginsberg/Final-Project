@@ -1,6 +1,7 @@
 class NewsFeedsController < ApplicationController
   before_action :set_news_feed, only: [:show, :edit, :update, :destroy]
 
+
   # GET /news_feeds
   # GET /news_feeds.json
   def index
@@ -14,6 +15,7 @@ class NewsFeedsController < ApplicationController
 
   # GET /news_feeds/new
   def new
+    @dashboard = Dashboard.find(params[:id])
     @news_feed = NewsFeed.new
   end
 
@@ -24,6 +26,7 @@ class NewsFeedsController < ApplicationController
   # POST /news_feeds
   # POST /news_feeds.json
   def create
+
     @news_feed = NewsFeed.new(news_feed_params)
 
     respond_to do |format|
@@ -69,6 +72,7 @@ class NewsFeedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_feed_params
-      params.require(:news_feed).permit(:title, :body, :dashboard_id, :dashboard_id)
+      params.require(:news_feed).permit(:title, :body, :dashboard_id)
     end
+
 end
