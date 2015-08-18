@@ -19,14 +19,20 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
-  <div class="field">
-    <%= f.label :dashboard_id %><br>
-    <%= f.number_field :dashboard_id %>
-  </div>
-  <div class="field">
-    <%= f.label :dashboard_id %><br>
-    <%= f.text_field :dashboard_id %>
-  </div>
+
+
+  <% if @dashboard.nil? %>
+    <div class="field">
+      <%= f.label :dashboard_id %><br>
+      <%= f.text_field :dashboard_id %>
+    </div>
+    <% else %>
+      <%= f.label :dashboard_id %> <br>
+      <%= f.text_field :dashboard_id, disabled: true, value: @dashboard.id %>
+  <% end %>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

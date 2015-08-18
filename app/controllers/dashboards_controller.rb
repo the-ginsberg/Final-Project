@@ -12,8 +12,8 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1
   # GET /dashboards/1.json
   def show
-    @news_feeds = NewsFeed.new
-    @uploads = Upload.new
+    #@news_feed = NewsFeed.new
+    @upload = Upload.new
   end
 
   # GET /dashboards/new

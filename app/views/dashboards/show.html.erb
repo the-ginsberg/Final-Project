@@ -11,10 +11,21 @@
 
 </div>
 
+
+
+
+
+
 <div class ="news_feed">
-  <%= link_to 'New Event', new_news_feed_path %>
+  <%= link_to 'New Event', new_news_feed_path(id: @dashboard.id) %>
   <br>
   <br>
+
+
+
+
+
+
   <% @dashboard.news_feeds.each do |nf| %>
   <table>
     <thead><strong><%= link_to((nf.title), news_feeds_path) %></strong></thead>
@@ -25,7 +36,16 @@
 </table>
 <br>
   <% end %>
+
+
+
+
 </div>
+
+
+
+
+
 
 
 <div class ="upload">
@@ -34,7 +54,10 @@
       <%= file_field_tag :file  %>
       <%= hidden_field_tag 'dashboard_id', @dashboard.id  %>
       <%= submit_tag 'Upload file' %>
+
   <% end %>
+
+
 </div>
 
 
