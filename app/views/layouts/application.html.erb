@@ -4,6 +4,7 @@
   <title>FinalProject</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "bootstrap.min", "sb-admin" %>
   <%= csrf_meta_tags %>
   <!-- The link below is for the font awesome icons utilized throughout - MT -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -15,9 +16,11 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
+
 <%= yield %>
 
 <%= render 'layouts/footer' %>
-
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

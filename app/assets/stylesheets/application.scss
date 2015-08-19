@@ -1,3 +1,4 @@
+
 @import 'user.scss';
 
 li {
@@ -14,4 +15,48 @@ li {
 
 .upload {
     border: 2px solid red;
+}
+
+.full_image {
+background-image: url(apple-desk-laptop-working-large.jpg);
+background-attachment: fixed;
+background-size: cover;
+}
+
+// dashboard titles in dashboard index view
+.dashboard_list {
+  font-size: 1.2em;
+}
+
+.dashboard_container {
+  margin:auto;
+
+}
+
+.dashboard_links {
+  margin-right: 0.2em;
+}
+
+.dashboard_title {
+  font-size: 1.1em;
+}
+
+.tab {
+  background-color: tan;
+  border: 2px solid black;
+  width: 22em;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.tab_new_dashboard {
+  background-color: blue;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1em;
+  width: 22em;
+}
+
+.uploads_list {
+  text-align: center;
 }
