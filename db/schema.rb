@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817230220) do
+ActiveRecord::Schema.define(version: 20150817193432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,17 +53,6 @@ ActiveRecord::Schema.define(version: 20150817230220) do
     t.integer  "dashboard_id"
   end
 
-  create_table "user_dashboards", force: :cascade do |t|
-    t.boolean  "role"
-    t.integer  "user_id"
-    t.integer  "dashboard_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "user_dashboards", ["dashboard_id"], name: "index_user_dashboards_on_dashboard_id", using: :btree
-  add_index "user_dashboards", ["user_id"], name: "index_user_dashboards_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -88,6 +77,4 @@ ActiveRecord::Schema.define(version: 20150817230220) do
   add_foreign_key "dashboards", "users"
   add_foreign_key "documents", "dashboards"
   add_foreign_key "news_feeds", "dashboards"
-  add_foreign_key "user_dashboards", "dashboards"
-  add_foreign_key "user_dashboards", "users"
 end
