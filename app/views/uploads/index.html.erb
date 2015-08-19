@@ -1,6 +1,5 @@
+<div class="uploads_list">
 
-<div class=" "
-<div class="container">
 
 <div class="row">
           <% @uploads.each do |upload| %>
@@ -15,3 +14,14 @@
 
         </div>
 </div>
+
+  <hr>
+
+
+
+  <!-- Pagination -->
+  <div class="row text-center">
+      <div class="col-lg-12">
+          <ul class="pagination">
+            <%= will_paginate @uploads, renderer: BootstrapPagination::Rails %>
+      </div>

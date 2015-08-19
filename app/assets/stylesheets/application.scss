@@ -1,3 +1,4 @@
+
 @import 'user.scss';
 
 li {
@@ -54,4 +55,8 @@ background-size: cover;
   border-radius: 10px;
   padding: 1em;
   width: 22em;
+}
+
+.uploads_list {
+  text-align: center;
 }
