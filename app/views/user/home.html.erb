@@ -19,8 +19,8 @@
 
     <div class="center">
     <h1>Welcome To Msg</h1>
-    <button type="button" class="btn btn-lg btn-primary">Log-In</button>
-    <button type="button" class="btn btn-lg btn-primary">Sign-up</button>
+    <button type="button" class="btn btn-lg btn-primary"><%= link_to 'Log-In', new_user_session_path %></button>
+    <button type="button" class="btn btn-lg btn-primary"><%= link_to 'Sign-up', new_user_registration_path %></button>
 </div>
 
 <%= render 'layouts/footer' %>
