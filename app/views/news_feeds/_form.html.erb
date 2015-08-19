@@ -21,15 +21,6 @@
   </div>
 
 
-  <% if @dashboard.nil? %>
-    <div class="field">
-      <%= f.label :dashboard_id %><br>
-      <%= f.text_field :dashboard_id %>
-    </div>
-    <% else %>
-      <%= f.label :dashboard_id %> <br>
-      <%= f.text_field :dashboard_id, disabled: true, value: @dashboard.id %>
-  <% end %>
 
 
 

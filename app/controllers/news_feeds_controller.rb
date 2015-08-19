@@ -26,8 +26,8 @@ class NewsFeedsController < ApplicationController
   # POST /news_feeds
   # POST /news_feeds.json
   def create
-
     @news_feed = NewsFeed.new(news_feed_params)
+    @news_feed.set_dashboard(@dashboard)
 
     respond_to do |format|
       if @news_feed.save

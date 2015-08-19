@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   get 'uploads/index'
 
-  resources :documents
-  resources :uploads
-  resources :news_feeds
-  resources :dashboards
+  resources :dashboards do
+    resources :uploads
+    resources :news_feeds
+  end
+  resources :user_dashboards
   devise_for :users
   resource :users
   root 'user#home'

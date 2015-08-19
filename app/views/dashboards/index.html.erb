@@ -1,5 +1,5 @@
+
 <div class="container">
-<p id="notice"><%= notice %></p>
 
 <h1 class="my_dashboard">Hello User</h1>
 <p>Please select your dashboard!</p>
@@ -12,6 +12,8 @@
 
   <div class="tab">
     <div class="dashboard_title">
+      <% @user = current_user %>
+      <% if @user.id == dashboard.user_id %>
         <%= dashboard.title %>
     </div>
 
@@ -21,6 +23,8 @@
         <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
   </div>
   <br>
+  <% else %>
+  <% end %>
   <% end %>
 
 </div>
