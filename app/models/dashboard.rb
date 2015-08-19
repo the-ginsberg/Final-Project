@@ -1,7 +1,6 @@
 class Dashboard < ActiveRecord::Base
-  has_many :user_dashboards
-  has_many :users, through: :user_dashboards
-  has_many :uploads
+  has_many :users
+  has_many :uploads, dependent: :destroy
   has_many :news_feeds, dependent: :destroy
 
   validates :user_id, presence: true

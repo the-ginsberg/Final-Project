@@ -1,19 +1,19 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /dashboards
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
-    @news_feeds = NewsFeed.all
-    @uploads = Upload.all
   end
 
   # GET /dashboards/1
   # GET /dashboards/1.json
   def show
-    #@news_feed = NewsFeed.new
+    @news_feed = NewsFeed.new
     @upload = Upload.new
+    @news_feeds = NewsFeed.all
+    @uploads = Upload.all
   end
 
   # GET /dashboards/new
