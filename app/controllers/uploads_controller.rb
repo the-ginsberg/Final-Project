@@ -1,7 +1,10 @@
 class UploadsController < ApplicationController
 
+  before_action :set_dashboard, only: [:create, :new, :index]
+  before_action :authenticate_user!
+
   def index
-    @uploads = Upload.all.order(created_at: :asc).paginate(page: params[:page], per_page: 9)
+    @uploads = @dashboard.upload.all.order(created_at: :asc).paginate(page: params[:page], per_page: 9)
   end
 
   def create
@@ -15,18 +18,26 @@ class UploadsController < ApplicationController
     )
 
     # Create an object for the upload
-    @uploads = Upload.new(
+    @upload = @dashboard.upload.new(
                           url: obj.public_url,
                           name: obj.key
                           )
 
     # Save the upload
-    if @uploads.save
+    if @upload.save
       redirect_to dashboard_path(params[:dashboard_id]), success: 'File successfully uploaded'
     else
       flash.now[:notice] = 'There was an error'
       render :new
     end
+  end
+
+
+private
+
+
+  def set_dashboard
+    @dashboard = Dashboard.find params[:dashboard_id]
   end
 
 
