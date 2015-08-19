@@ -1,12 +1,13 @@
 class NewsFeedsController < ApplicationController
   before_action :set_news_feed, only: [:show, :edit, :update, :destroy]
+  before_action :set_dashboard, only: [:create, :new, :index]
   before_action :authenticate_user!
 
 
   # GET /news_feeds
   # GET /news_feeds.json
   def index
-    @news_feeds = NewsFeed.all
+    @news_feeds = @dashboard.news_feeds
   end
 
   # GET /news_feeds/1
@@ -16,8 +17,7 @@ class NewsFeedsController < ApplicationController
 
   # GET /news_feeds/new
   def new
-    @dashboard = Dashboard.find(params[:id])
-    @news_feed = NewsFeed.new
+    @news_feed = @dashboard.news_feeds.new
   end
 
   # GET /news_feeds/1/edit
@@ -27,12 +27,11 @@ class NewsFeedsController < ApplicationController
   # POST /news_feeds
   # POST /news_feeds.json
   def create
-    @news_feed = NewsFeed.new(news_feed_params)
-    @news_feed.set_dashboard(@dashboard)
+    @news_feed = @dashboard.news_feeds.new(news_feed_params)
 
     respond_to do |format|
       if @news_feed.save
-        format.html { redirect_to @news_feed, notice: 'News feed was successfully created.' }
+        format.html { redirect_to @news_feed, notice: 'Newsfeed was successfully created.' }
         format.json { render :show, status: :created, location: @news_feed }
       else
         format.html { render :new }
@@ -66,9 +65,13 @@ class NewsFeedsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_news_feed
-      @news_feed = NewsFeed.find(params[:id])
+        @news_feed = NewsFeed.find(params[:id])
+    end
+
+    def set_dashboard
+        @dashboard = Dashboard.find params[:dashboard_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
