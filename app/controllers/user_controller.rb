@@ -4,6 +4,7 @@ class UserController < ApplicationController
   end
 
   def home
+    render layout: false
   end
 
   def about
