@@ -64,11 +64,37 @@
 
 
 
+<div class="uploads_list">
 
 
+<div class="row">
+          <% @uploads.each do |upload| %>
+
+          <% if @dashboard.id == upload.dashboard_id %>
+
+            <div class="col-md-4 portfolio-item">
+
+                <%= image_tag ("document.png") %>
+                <h3 class ="index_center"><%= link_to upload.name, upload.url%></h3>
+            </div>
+            <% end %>
+
+          <% end %>
+
+        </div>
 </div>
 
+  <hr>
 
+
+
+  <!-- Pagination -->
+  <div class="row text-center">
+      <div class="col-lg-12">
+          <ul class="pagination">
+            <%= will_paginate @uploads, renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
 
 
 
