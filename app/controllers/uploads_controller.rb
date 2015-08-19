@@ -18,7 +18,7 @@ class UploadsController < ApplicationController
     )
 
     # Create an object for the upload
-    @upload = @dashboard.upload.new(
+    @upload = @dashboard.uploads.new(
                           url: obj.public_url,
                           name: obj.key
                           )
