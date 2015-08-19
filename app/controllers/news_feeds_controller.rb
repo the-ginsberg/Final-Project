@@ -1,5 +1,6 @@
 class NewsFeedsController < ApplicationController
   before_action :set_news_feed, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
 
   # GET /news_feeds
