@@ -7,12 +7,14 @@ class DashboardsController < ApplicationController
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
-    if params[:search]
-      @dashboards = Dashboard.search(params[:search]).order("created_at DESC")
-    else
-      @dashboards = Dashboard.all.order('created_at DESC')
-    end
   end
+
+  def search
+    @dashboard = Dashboard.find_by(token: params[:search])
+    @news_feed = NewsFeed.new
+    render 'show'
+  end
+
 
   # GET /dashboards/1
   # GET /dashboards/1.json
@@ -35,6 +37,7 @@ class DashboardsController < ApplicationController
   # POST /dashboards
   # POST /dashboards.json
   def create
+    # render plain: params.to_json
     @dashboard = Dashboard.new(dashboard_params)
     @dashboard.set_user(current_user)
     @dashboard.token = @token

@@ -27,6 +27,8 @@ class NewsFeedsController < ApplicationController
   # POST /news_feeds
   # POST /news_feeds.json
   def create
+    # render plain: params.to_json
+
     @news_feed = @dashboard.news_feeds.new(news_feed_params)
 
     respond_to do |format|
