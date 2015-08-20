@@ -1,44 +1,7 @@
 // Place all the styles related to the Dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.new_dashboard{
-  float:right;
-}
 
-.my_dashboard {
-  float:left;
-}
-.calendar {
-  border: 2px solid red;
-  text-align: center;
-  float: left;
-  height: 300px;
-  width: 60%;
-}
-
-.news_feed {
-  border: 2px solid blue;
-  text-align: center;
-  float: right;
-  height: 300px;
-  width: 35%;
-  overflow: auto;
-
-}
-
-.upload {
-  border: 2px solid black;
-  text-align: center;
-  clear: both;
-  height: 200px;
-
-}
-
-.dashboard_list {
-  color:red;
-}
-
-
-.table_news_body {
-  text-align: justify;
+body {
+box-sizing: border-box;
 }

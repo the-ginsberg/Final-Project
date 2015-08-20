@@ -1,47 +1,42 @@
+<div id="main">
+   <article>
+   </article>
+   <aside>newsfeed</aside>
 
-<div class="container">
+   <article class="chat">chat</article>
+   <aside class="docs">docs</aside>
+</div>
 
-<h1 class="my_dashboard">Hello User</h1>
+
+
+
+<h1>Hello User</h1>
 <p>Please select your dashboard!</p>
-
 
 <h2>Dashboards</h2>
 
-  <div class="dashboard_list">
-    <% @dashboards.each do |dashboard| %>
+<div class="dashboard_list">
+  <% @dashboards.each do |dashboard| %>
 
   <div class="tab">
     <div class="dashboard_title">
       <% @user = current_user %>
       <% if @user.id == dashboard.user_id %>
-        <%= dashboard.title %>
+      <%= dashboard.title %>
     </div>
 
-
-        <%= link_to 'Show', dashboard, class:"dashboard_links" %>
-        <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
-        <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
-  </div>
-  <br>
-  <% else %>
-  <% end %>
-  <% end %>
+    <%= link_to 'Show', dashboard, class:"dashboard_links" %>
+    <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
+    <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
+</div>
+<br>
+<% else %>
+<% end %>
+<% end %>
 
 </div>
-
-
-
-
 
 <div class="tab_new_dashboard">
 <p class="new_dashboard"><%= link_to 'New Dashboard', new_dashboard_path %></p>
-</div>
-
-
-
-
-
-
-
 </div>
 </div>

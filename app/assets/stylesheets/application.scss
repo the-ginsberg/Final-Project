@@ -1,63 +1,38 @@
+@import 'normalize';
+@import 'user';
 
-@import 'user.scss';
+$btn-off-white: white;
+$btn-off-blue: blue;
+$btn-border: 1px solid gray;
+$btn-height: 40px;
+$btn-padding: 1rem;
 
-
-li {
-  display: inline;
+body {
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-.calendar {
-  border: 2px solid black;
-}
-
-.news_feed {
-  border: 2px solid blue;
-}
-
-.upload {
-    border: 2px solid red;
-}
-
-.full_image {
-background-image: url(apple-desk-laptop-working-large.jpg);
-background-attachment: fixed;
-background-size: cover;
-}
-
-// dashboard titles in dashboard index view
-.dashboard_list {
-  font-size: 1.2em;
-}
-
-.dashboard_container {
-  margin:auto;
-
-}
-
-.dashboard_links {
-  margin-right: 0.2em;
-}
-
-.dashboard_title {
-  font-size: 1.1em;
-}
-
-.tab {
-  background-color: tan;
-  border: 2px solid black;
-  width: 22em;
+.btn {
+  border: $btn-border;
+  font-size: 1.5rem;
+  line-height: $btn-height;
+  margin: 1rem;
+  padding: .6rem ($btn-padding * 2);
+  min-width: 10rem;
   border-radius: 10px;
-  padding: 1em;
 }
 
-.tab_new_dashboard {
-  background-color: blue;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 1em;
-  width: 22em;
+.btn-off-white {
+  background: $btn-off-white;
+  &:hover {
+    background: darken($btn-off-white, 20%);
+  }
 }
 
-.uploads_list {
-  text-align: center;
+.btn-off-blue {
+  background: $btn-off-blue;
+  color: white;
+   &:hover {
+    background: lighten($btn-off-blue, 20%);
+  }
 }
