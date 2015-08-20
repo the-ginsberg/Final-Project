@@ -68,6 +68,10 @@ class DashboardsController < ApplicationController
     end
   end
 
+  def join
+    redirect_to root_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dashboard

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'uploads/create'
   get 'uploads/index'
   get 'dashboards/join'
+  put 'dashboards/join'
 
   resources :uploads
   resources :news_feeds
