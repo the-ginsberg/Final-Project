@@ -1,3 +1,31 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// _________________________________
+// Landing Page for site
+// _________________________________
+
+
+// background image that fully covers
+.full_image {
+  background-image: image-url("apple-desk-laptop-working-large.jpg");
+  height: 100vh; /*viewport height */
+  background-size: cover;
+  background-position: center;
+
+}
+
+// welcome to site name text 
+.center {
+  text-align: center;
+  color:white;
+  background-color: rgba(222, 255, 249, 0.2);
+  box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.52);
+  border-radius: 25px;
+  max-width: 30em;
+  min-height: 10em;
+  margin: auto;
+  margin-top: 10em;
+  padding:1em;
+
+}

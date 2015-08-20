@@ -1,1 +1,81 @@
 @import 'normalize';
+@import 'user';
+// ______________________________________________
+// Variables
+// ______________________________________________
+
+$btn-off-white: white;
+$btn-off-blue: blue;
+$btn-border: 1px solid gray;
+$btn-height: 40px;
+$btn-padding: 1rem;
+$form-color: lightgray;
+$submit-button: green;
+// ______________________________________________
+// Button styling
+// ______________________________________________
+
+.btn {
+  border: $btn-border;
+  font-size: 1rem;
+  line-height: $btn-height;
+  margin: 0.5rem;
+  padding: $btn-padding;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.btn-off-white {
+  background: $btn-off-white;
+  &:hover {
+    background: darken($btn-off-white, 20%);
+  }
+}
+
+.btn-off-blue {
+  background: $btn-off-blue;
+  color: white;
+   &:hover {
+    background: lighten($btn-off-blue, 20%);
+  }
+}
+
+// gray box around forms
+.user_form {
+  display:flex;
+  justify-content: center;
+  background:$form-color;
+  padding:3em;
+  max-width: 35em;
+  margin:auto;
+  border-radius: 15px;
+}
+
+// blank white spaces in form for typing in submission text
+input[type="email"],[type="password"],[type="name"],
+[type="text"]{
+  padding: 5px;
+  min-height: 2em;
+  border-radius: 5px;
+  min-width:25em;
+  -webkit-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+}
+// Form submission buttons
+input[type="submit"]{
+background:$submit-button;
+padding: 5px;
+min-height: 2em;
+border-radius: 5px;
+min-width:10em;
+-webkit-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
+}
+
+input[type="checkbox"]{
+  min-height: 1em;
+  min-width: 1em;
+  margin:8px;
+}
