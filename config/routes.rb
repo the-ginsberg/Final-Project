@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'uploads/index'
   get 'dashboards/join'
   put 'dashboards/join'
+  post 'dashboards/search'
 
   resources :uploads
   resources :news_feeds
