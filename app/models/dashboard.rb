@@ -1,5 +1,6 @@
 class Dashboard < ActiveRecord::Base
-  has_many :users
+  has_many :invites
+  has_many :users, through: :invites
   has_many :uploads, dependent: :destroy
   has_many :news_feeds, dependent: :destroy
 
