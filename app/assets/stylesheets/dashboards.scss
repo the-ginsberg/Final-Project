@@ -2,6 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-box-sizing: border-box;
+#entire_dashboard_index {
+  padding: 2em;
+}
+
+#title {
+  display: block;
+  margin: 4px;
+  // border: 1px solid black;
+  // background: blue;
+  min-height: 100px;
+}
+
+
+#dashboard_list {
+  display: block;
+  margin: 4px;
+  // border: 1px solid black;
+}
+
+#dashboard_join {
+  display: block;
+  margin: 4px;
+  // border: 1px solid black;
+  // background: orange;
+  min-height: 10em;
+}
+
+#dashboard_links {
+  display: block;
+  margin: 4px;
+  // border: 1px solid black;
+  // background: yellow;
+  min-height: 10em;
+}
+
+.each_dashboard {
+  background: gray;
+  border-radius: 5px;
+  padding: 1em;
+  max-width: 25em;
 }

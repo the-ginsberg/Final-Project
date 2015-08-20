@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'user';
+@import 'dashboards';
 // ______________________________________________
 // Variables
 // ______________________________________________
@@ -14,6 +15,10 @@ $submit-button: green;
 // ______________________________________________
 // Button styling
 // ______________________________________________
+
+body {
+box-sizing: border-box;
+}
 
 .btn {
   border: $btn-border;
@@ -50,6 +55,7 @@ $submit-button: green;
   margin:auto;
   border-radius: 15px;
 }
+
 
 // blank white spaces in form for typing in submission text
 input[type="email"],[type="password"],[type="name"],

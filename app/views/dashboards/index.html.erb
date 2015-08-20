@@ -1,49 +1,35 @@
-<div id="main">
-   <article>
-   </article>
-   <aside>newsfeed</aside>
-
-   <article class="chat">chat</article>
-   <aside class="docs">docs</aside>
+<% @user = current_user %>
+<div id=entire_dashboard_index>
+<div id="title">
+  <h1>Hello <%= @user.name %>!</h1>
 </div>
 
+<div id="dashboard_list">
+  <h2>Your Dashboards</h2>
+    <% @dashboards.each do |dashboard| %>
 
-
-
-<h1>Hello User</h1>
-<p>Please select your dashboard!</p>
-
-<h2>Dashboards</h2>
-
-<div class="dashboard_list">
-  <% @dashboards.each do |dashboard| %>
-
-  <div class="tab">
-    <div class="dashboard_title">
-      <% @user = current_user %>
-      <% if @user.id == dashboard.user_id %>
-      <%= dashboard.title %>
-    </div>
-
-    <%= link_to 'Show', dashboard, class:"dashboard_links" %>
-    <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
-    <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
-</div>
-<br>
-      <% else %>
-    <% end %>
-<% end %>
-
-<h3>Join a Dashboard</h3>
-<%= form_tag(dashboards_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-
+    <% if @user.id == dashboard.user_id %>
+        <div class="each_dashboard">
+            <%= dashboard.title %>
+            <%= link_to 'Show', dashboard, class:"dashboard_links" %>
+            <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
+            <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
+        </div>
+        <br>
+        <% else %>
+      <% end %>
+  <% end %>
 </div>
 
-<div class="tab_new_dashboard">
+<div id="dashboard_join">
+  <h3>Join a Dashboard</h3>
+  <%= form_tag(dashboards_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter Dashboard Code" %>
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
+<div id="dashbord_links">
 <p class="new_dashboard"><%= link_to 'New Dashboard', new_dashboard_path %></p>
 <p class="new_dashboard"><%= link_to 'Join Dashboard', dashboards_join_path %></p>
 </div>
