@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :generate_token, only: [:create]
   # GET /dashboards
   # GET /dashboards.json
   def index
@@ -30,6 +31,7 @@ class DashboardsController < ApplicationController
   def create
     @dashboard = Dashboard.new(dashboard_params)
     @dashboard.set_user(current_user)
+    @dashboard.token = @token
 
     respond_to do |format|
       if @dashboard.save
@@ -72,8 +74,13 @@ class DashboardsController < ApplicationController
         @dashboard = Dashboard.find(params[:id])
     end
 
+    def generate_token
+      @token = SecureRandom.uuid
+    end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def dashboard_params
-      params.require(:dashboard).permit(:title, :user_id, :dashboard_id)
+      params.require(:dashboard).permit(:title, :token, :user_id, :dashboard_id)
     end
 end

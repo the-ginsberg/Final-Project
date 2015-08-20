@@ -6,6 +6,7 @@ class Dashboard < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, uniqueness: true
+  validates :token, uniqueness: true
 
 
   def set_user(user)
