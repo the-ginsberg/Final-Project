@@ -9,6 +9,10 @@ class Dashboard < ActiveRecord::Base
   validates :token, uniqueness: true
 
 
+  def self.search(search)
+    where("token LIKE ?", "%#{search}%")
+  end
+
   def set_user(user)
     self.user_id = user.id
   end

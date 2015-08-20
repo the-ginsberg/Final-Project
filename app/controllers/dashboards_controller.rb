@@ -1,11 +1,17 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
+  before_action :set_dashboards, only: [:join]
   before_action :authenticate_user!
   before_action :generate_token, only: [:create]
   # GET /dashboards
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
+    if params[:search]
+      @dashboards = Dashboard.search(params[:search]).order("created_at DESC")
+    else
+      @dashboards = Dashboard.all.order('created_at DESC')
+    end
   end
 
   # GET /dashboards/1
@@ -68,9 +74,6 @@ class DashboardsController < ApplicationController
     end
   end
 
-  def join
-    redirect_to root_path
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -81,6 +84,11 @@ class DashboardsController < ApplicationController
     def generate_token
       @token = SecureRandom.uuid
     end
+
+    def set_dashboards
+      @dashboards = Dashboard.all
+    end
+
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
