@@ -5,15 +5,9 @@
   <%= @dashboard.title %>
 </p>
 
-
 <div class ="calendar">
   <p>This space is reserved for linking to the calendar.</p>
-
 </div>
-
-
-
-
 
 <h3>Listing News Feeds</h3>
 
@@ -40,24 +34,23 @@
 </table>
 
 <div class ="news_feed">
-  <%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %>
-  <br>
-  <br>
+  <p><%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %></p>
 
-<h3>Add a news item!</h3>
-<%= form_for [@dashboard, @news_feed] do |f| %>
-<div class="field">
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
+  <h3>Add a news item!</h3>
+  <%= form_for [@dashboard, @news_feed] do |f| %>
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
 </div>
-<div class="field">
-  <%= f.label :body %><br>
-  <%= f.text_area :body %>
-</div>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<% end %>
 
 <div class="uploads_list">
   <div class="row">
