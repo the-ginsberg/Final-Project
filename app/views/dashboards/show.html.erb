@@ -17,7 +17,7 @@
 
 
 <div class ="news_feed">
-  <%= link_to 'New Event', new_dashboard_news_feed_path(id: @dashboard.id) %>
+  <%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %>
   <br>
   <br>
 
@@ -50,7 +50,7 @@
 
 <div class ="upload">
   <p>This space is reserved for linking to uploads.</p>
-  <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
+  <%= form_tag dashboard_path, enctype: 'multipart/form-data' do %>
       <%= file_field_tag :file  %>
       <%= hidden_field_tag 'dashboard_id', @dashboard.id  %>
       <%= submit_tag 'Upload file' %>
