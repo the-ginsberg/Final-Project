@@ -43,15 +43,17 @@
   </div>
 
   <div id="dashboard_bottom_row">
-          <div class="chat">
-            <p>This is the chat feature</p>
-          </div>
+      <div class="chat">
+        <p>This is the chat feature</p>
+      </div>
 
-          <div class="docs">
-            <%= image_tag ("document-square.png") %>
-            <p>Documents</p>
-            <%= link_to 'New Document', uploads_new_path %>
-        </div>
+    <div class="docs">
+      <div class="docs_child">
+        <%= image_tag ("document-square.png") %>
+        <p>Documents</p>
+        <%= link_to 'New Document', uploads_new_path %>
+      </div>
+    </div>
   </div>
 
 <!-- New News Feed Form -->
