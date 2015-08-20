@@ -56,12 +56,12 @@
 <h3>Add a news item!</h3>
 <%= form_for [@dashboard, @news_feed] do |f| %>
 <div class="field">
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
+  <br>
+  <%= f.text_field :title, placeholder: 'Title' %>
 </div>
 <div class="field">
-  <%= f.label :body %><br>
-  <%= f.text_area :body %>
+  <br>
+  <%= f.text_area :body, placeholder: 'Announcement' %>
 </div>
 <div class="actions">
   <%= f.submit %>
