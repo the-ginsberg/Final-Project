@@ -1,9 +1,14 @@
 // Place all the styles related to the Dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-________________________________________
-DASHBOARDS INDEX VIEW
-________________________________________
+
+
+$gray: gray;
+
+// ________________________________________
+// DASHBOARDS INDEX VIEW
+// ________________________________________
+
 #entire_dashboard_index {
   padding: 2em;
 }
@@ -44,4 +49,58 @@ ________________________________________
   border-radius: 5px;
   padding: 1em;
   max-width: 25em;
+}
+
+
+// ________________________________________
+// DASHBOARDS SHOW VIEW!!!!!!!
+// ________________________________________
+
+#main {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-flow: row;
+  min-height: 500px;
+}
+
+#main > article {
+  background: darken($gray, 10%);
+  margin: 4px;
+  order: 1;
+  flex: 3 1 60%;
+
+}
+
+
+
+#main > aside {
+  background: red;
+  margin: 4px;
+  order: 2;
+  flex: 1 1 40%;
+}
+
+#dashboard_bottom_row {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-flow: row;
+  min-height: 300px;
+}
+
+.chat {
+  flex: 3 1 75%;
+  background: pink;
+  margin: 4px;
+  order: 1
+
+}
+
+.docs {
+  flex: 1 1 25%;
+  background: yellow;
+  margin: 4px;
+  order: 2
+
 }
