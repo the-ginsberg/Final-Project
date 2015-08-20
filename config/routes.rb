@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'uploads/new'
   get 'uploads/create'
   get 'uploads/index'
+  get 'dashboards/join'
+  put 'dashboards/join'
 
   resources :uploads
   resources :news_feeds
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
     resources :uploads
     resources :news_feeds
   end
-  
+
   devise_for :users
   resource :users
   root 'user#home'

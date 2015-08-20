@@ -1,10 +1,17 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
+  before_action :set_dashboards, only: [:join]
   before_action :authenticate_user!
+  before_action :generate_token, only: [:create]
   # GET /dashboards
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
+    if params[:search]
+      @dashboards = Dashboard.search(params[:search]).order("created_at DESC")
+    else
+      @dashboards = Dashboard.all.order('created_at DESC')
+    end
   end
 
   # GET /dashboards/1
@@ -30,6 +37,7 @@ class DashboardsController < ApplicationController
   def create
     @dashboard = Dashboard.new(dashboard_params)
     @dashboard.set_user(current_user)
+    @dashboard.token = @token
 
     respond_to do |format|
       if @dashboard.save
@@ -66,14 +74,25 @@ class DashboardsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dashboard
         @dashboard = Dashboard.find(params[:id])
     end
 
+    def generate_token
+      @token = SecureRandom.uuid
+    end
+
+    def set_dashboards
+      @dashboards = Dashboard.all
+    end
+
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def dashboard_params
-      params.require(:dashboard).permit(:title, :user_id, :dashboard_id)
+      params.require(:dashboard).permit(:title, :token, :user_id, :dashboard_id)
     end
 end
