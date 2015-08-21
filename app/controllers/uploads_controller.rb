@@ -37,7 +37,8 @@ private
 
 
   def set_dashboard
-    @dashboard = Dashboard.find params[:dashboard_id]
+    render plan: params.to_json
+    # @dashboard = Dashboard.find params[:dashboard_id]
   end
 
 
