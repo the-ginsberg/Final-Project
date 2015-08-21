@@ -95,6 +95,7 @@ $gray: gray;
   margin: 1em;
   order: 1
 
+
 }
 
 
@@ -106,32 +107,35 @@ $gray: gray;
 
 .docs {
   flex: 1 1 25%;
+  display:flex;
   background: yellow;
   margin: 1em;
   order: 2;
+  align-items: center;
+  justify-content: center;
 }
 
 
 
-
-@media all and (max-width: 640px) {
-  #main, # {
-    -webkit-flex-flow: column;
-    flex-direction: column;
-  }
-  #main > article,
-  #main > nav,
-  #main > aside {
-    /* Return them to document order */
-
-    -webkit-order: 0;
-    order: 0;
-  }
-  #main > nav,
-  #main > aside,
-  header,
-  footer {
-    min-height: 50px;
-    max-height: 50px;
-  }
-}
+//
+// @media all and (max-width: 640px) {
+//   #main, # {
+//     -webkit-flex-flow: column;
+//     flex-direction: column;
+//   }
+//   #main > article,
+//   #main > nav,
+//   #main > aside {
+//     /* Return them to document order */
+//
+//     -webkit-order: 0;
+//     order: 0;
+//   }
+//   #main > nav,
+//   #main > aside,
+//   header,
+//   footer {
+//     min-height: 50px;
+//     max-height: 50px;
+//   }
+// }

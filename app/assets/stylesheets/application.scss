@@ -26,9 +26,10 @@ box-sizing: border-box;
   font-size: 1rem;
   line-height: $btn-height;
   margin: 0.5rem;
-  padding: $btn-padding;
+  padding: 1rem 3rem;
   border-radius: 10px;
   text-decoration: none;
+
 }
 
 .btn-off-white {
@@ -48,8 +49,6 @@ box-sizing: border-box;
 
 // gray box around forms
 .user_form {
-  display:flex;
-  justify-content: center;
   background:$form-color;
   padding:3em;
   max-width: 35em;
@@ -57,6 +56,11 @@ box-sizing: border-box;
   border-radius: 15px;
 }
 
+.devise_flexbox_container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // blank white spaces in form for typing in submission text
 input[type="email"],[type="password"],[type="name"],

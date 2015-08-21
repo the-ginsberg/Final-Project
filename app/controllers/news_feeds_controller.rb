@@ -1,6 +1,6 @@
 class NewsFeedsController < ApplicationController
   before_action :set_news_feed, only: [:show, :edit, :update, :destroy]
-  before_action :set_dashboard, only: [:create, :new, :index]
+  before_action :set_dashboard, only: [:new, :index]
   before_action :authenticate_user!
 
 
@@ -29,7 +29,7 @@ class NewsFeedsController < ApplicationController
   def create
     # render plain: params.to_json
 
-    @news_feed = @dashboard.news_feeds.new(news_feed_params)
+    @news_feed = NewsFeed.new(news_feed_params)
 
     respond_to do |format|
       if @news_feed.save
@@ -73,7 +73,7 @@ class NewsFeedsController < ApplicationController
     end
 
     def set_dashboard
-        @dashboard = Dashboard.find params[:dashboard_id]
+        @dashboard = Dashboard.find(params[:dashboard_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
