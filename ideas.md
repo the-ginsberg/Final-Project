@@ -35,6 +35,7 @@
   - belongs_to :user
   - has_many :dashboard_memberships
   - has_many :members, through: :dashboard_memberships
+  <!-- HOW DO I MAKE MEMBERS REFERENCE MEMBER_ID? -->
   - attributes: member:references (member_id on the dashboards table)
 
 ### Token

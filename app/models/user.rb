@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :invites
-  has_many :dashboards, through: :invites
+  has_many :dashboards
+  has_many :dashboard_memberships
+  has_many :memberships, through: :dashboard_memberships, source: :member
 
 end
