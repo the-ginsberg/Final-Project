@@ -1,36 +1,41 @@
 <% @user = current_user %>
-<div id=entire_dashboard_index>
-<div id="title">
-  <h1>Hello <%= @user.name %>!</h1>
-</div>
 
-<div id="dashboard_list">
-  <h2>Your Dashboards</h2>
-    <% @dashboards.each do |dashboard| %>
+<div class="dashboard_flexbox_container">
+  <div class="dash-flex-child">
+    <div id="title">
+      <h1>Hello
+        <%= @user.name %>!</h1>
+    </div>
 
-    <% if @user.id == dashboard.user_id %>
-        <div class="each_dashboard">
-            <%= dashboard.title %>
-            <%= link_to 'Show', dashboard, class:"dashboard_links" %>
-            <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
-            <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
-        </div>
-        <br>
-        <% else %>
-      <% end %>
-  <% end %>
-</div>
+    <div id="dashboard_list">
+      <h2>Your Dashboards</h2>
+      <% @dashboards.each do |dashboard| %>
 
-<div id="dashboard_join">
-  <h3>Join a Dashboard</h3>
-  <%= form_tag(dashboards_search_path, id: "search-form") do %>
+      <% if @user.id == dashboard.user_id %>
+      <div class="each_dashboard">
+        <%= dashboard.title %>
+        <%= link_to 'Show', dashboard, class:"dashboard_links" %>
+        <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
+        <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
+    </div>
+    <br>
+    <% else %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div id="dashboard_join">
+    <h3>Join a Dashboard</h3>
+    <%= form_tag(dashboards_search_path, id: "search-form") do %>
     <%= text_field_tag :search, params[:g], placeholder: "Enter Dashboard Code" %>
     <%= submit_tag "Search" %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div id="dashbord_links">
-<p class="new_dashboard"><%= link_to 'New Dashboard', new_dashboard_path %></p>
-<p class="new_dashboard"><%= link_to 'Join Dashboard', dashboards_join_path %></p>
+  <div id="dashbord_links">
+    <%= link_to 'New Dashboard', new_dashboard_path %>
+    <%= link_to 'Join Dashboard', dashboards_join_path %>
+  </div>
+
 </div>
 </div>
