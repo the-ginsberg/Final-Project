@@ -8,9 +8,18 @@ $gray: gray;
 // ________________________________________
 // DASHBOARDS INDEX VIEW
 // ________________________________________
+.dashboard_flexbox_container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
-#entire_dashboard_index {
-  padding: 2em;
+
+.dash-flex-child {
+border: 2px solid black;
+padding:3em;
+max-width: 35em;
+
 }
 
 #title {
@@ -19,12 +28,14 @@ $gray: gray;
   // border: 1px solid black;
   // background: blue;
   min-height: 100px;
+  text-align: center;
 }
 
 
 #dashboard_list {
   display: block;
   margin: 4px;
+  text-align: center;
   // border: 1px solid black;
 }
 
@@ -34,6 +45,7 @@ $gray: gray;
   // border: 1px solid black;
   // background: orange;
   min-height: 10em;
+  text-align: center;
 }
 
 #dashboard_links {
@@ -49,6 +61,7 @@ $gray: gray;
   border-radius: 5px;
   padding: 1em;
   max-width: 25em;
+  margin:auto;
 }
 
 
@@ -79,6 +92,13 @@ $gray: gray;
   margin: 1em;
   order: 2;
   flex: 1 1 40%;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.main_child{
+// content inside of red box
 }
 
 #dashboard_bottom_row {
@@ -113,6 +133,21 @@ $gray: gray;
   order: 2;
   align-items: center;
   justify-content: center;
+}
+
+
+// ________________________________________
+// DASHBOARDS NEWS FEEDS SECTION!!!!!!!
+// ________________________________________
+// #dash_news_flex_cont {}
+.each_news_event {
+  padding:1em;
+  text-align: justify;
+  min-width: 30em;
+  max-width: 32em;
+  min-height: 5em;
+  border-radius: 5px;
+  background-color: white;
 }
 
 
