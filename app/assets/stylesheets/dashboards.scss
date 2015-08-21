@@ -141,15 +141,13 @@ max-width: 35em;
 // ________________________________________
 // #dash_news_flex_cont {}
 .each_news_event {
+  padding:1em;
+  text-align: justify;
   min-width: 30em;
+  max-width: 32em;
   min-height: 5em;
-  background:
-  linear-gradient(135deg, transparent 10px, white 0) top left,
-  linear-gradient(225deg, transparent 10px, white 0) top right,
-  linear-gradient(315deg, transparent 10px, white 0) bottom right,
-  linear-gradient(45deg,  transparent 10px, white 0) bottom left;
-background-size: 50% 50%;
-background-repeat: no-repeat;
+  border-radius: 5px;
+  background-color: white;
 }
 
 

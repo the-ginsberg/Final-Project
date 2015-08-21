@@ -33,7 +33,9 @@
 
         <% @dashboard.news_feeds.each do |news_feed| %>
           <div class="each_news_event">
-              <%= news_feed.title %>
+              <strong><%= link_to news_feed.title, news_feed %> </strong>
+              <br>
+              <br>
               <%= news_feed.body %>
               <br>
 
