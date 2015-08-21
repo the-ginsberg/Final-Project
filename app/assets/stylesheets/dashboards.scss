@@ -97,8 +97,8 @@ max-width: 35em;
   justify-content: center;
 }
 
-.bastard_child{
-
+.main_child{
+// content inside of red box
 }
 
 #dashboard_bottom_row {
@@ -140,7 +140,17 @@ max-width: 35em;
 // DASHBOARDS NEWS FEEDS SECTION!!!!!!!
 // ________________________________________
 // #dash_news_flex_cont {}
-
+.each_news_event {
+  min-width: 30em;
+  min-height: 5em;
+  background:
+  linear-gradient(135deg, transparent 10px, white 0) top left,
+  linear-gradient(225deg, transparent 10px, white 0) top right,
+  linear-gradient(315deg, transparent 10px, white 0) bottom right,
+  linear-gradient(45deg,  transparent 10px, white 0) bottom left;
+background-size: 50% 50%;
+background-repeat: no-repeat;
+}
 
 
 
