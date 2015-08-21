@@ -21,7 +21,8 @@ class DashboardsController < ApplicationController
   def show
     @news_feed = NewsFeed.new
     @upload = Upload.new
-    @news_feeds = NewsFeed.all
+    # @news_feeds = NewsFeed.all
+    @last_three = NewsFeed.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
     @uploads = Upload.all
   end
 

@@ -6,23 +6,49 @@
 // ______________________________________________
 
 $btn-off-white: white;
-$btn-off-blue: blue;
-$btn-border: 1px solid gray;
+$btn-off-blue: #00BD9C;
+$main_color: #00BD9C;
+$btn-border: 2px solid white;
 $btn-height: 40px;
 $btn-padding: 1rem;
-$form-color: lightgray;
+$form-color: #00BD9C;
 $submit-button: green;
 $gray: gray;
 // ______________________________________________
 // Button styling
 // ______________________________________________
+// .full_background_gradient {
+//     background-image: image-url("orange_gradient.jpg");
+//     height: 100vh; /*viewport height */
+//     background-size: cover;
+//     background-position: center;
+//
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Architects Daughter', sans-serif;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+h2 > a {
+  font-size: 1em;
+  color: white;
+  font-size: 1em;
+  &:hover{
+    color:#00BD9C;
+  }
+}
+
+
 
 body {
 box-sizing: border-box;
 }
 
 .btn {
-  border: $btn-border;
+
   font-size: 1rem;
   line-height: $btn-height;
   margin: 0.5rem;
@@ -34,26 +60,34 @@ box-sizing: border-box;
 
 .btn-off-white {
   background: $btn-off-white;
+  color:$btn-off-blue;
+  font-weight: bold;
   &:hover {
-    background: darken($btn-off-white, 20%);
+    background: $btn-off-blue;
   }
 }
 
 .btn-off-blue {
   background: $btn-off-blue;
   color: white;
+  font-weight: bold;
    &:hover {
-    background: lighten($btn-off-blue, 20%);
+    background: darken($btn-off-blue, 20%);
   }
 }
 
 // gray box around forms
 .user_form {
-  background:$form-color;
+  background-color: white;
+  border: 2px solid $main_color;
   padding:3em;
   max-width: 35em;
   margin:auto;
+  margin-top: 8em;
   border-radius: 15px;
+  -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
 }
 
 
@@ -115,4 +149,129 @@ input[type="checkbox"]{
   min-height: 1em;
   min-width: 1em;
   margin:8px;
+}
+
+
+
+// NAVBAR
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+#cssmenu {
+  background: #00BD9C;
+  width: auto;
+}
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+#cssmenu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#cssmenu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#cssmenu.align-right ul li {
+  float: right;
+}
+#cssmenu.align-center ul {
+  text-align: center;
+}
+#cssmenu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 2em;
+  font-family: 'Architects Daughter',sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#cssmenu ul li a:hover {
+  color: #333333;
+}
+#cssmenu ul li a:hover:before {
+  width: 100%;
+}
+#cssmenu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#cssmenu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#cssmenu ul li.last > a:after,
+#cssmenu ul li:last-child > a:after {
+  display: none;
+}
+#cssmenu ul li.active a {
+  color: #333333;
+}
+#cssmenu ul li.active a:before {
+  width: 100%;
+}
+#cssmenu.align-right li.last > a:after,
+#cssmenu.align-right li:last-child > a:after {
+  display: block;
+}
+#cssmenu.align-right li:first-child a:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #cssmenu ul li {
+    float: none;
+    display: block;
+  }
+  #cssmenu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+  #cssmenu ul li.last > a,
+  #cssmenu ul li:last-child > a {
+    border: 0;
+  }
+  #cssmenu ul li a:after {
+    display: none;
+  }
+  #cssmenu ul li a:before {
+    display: none;
+  }
 }

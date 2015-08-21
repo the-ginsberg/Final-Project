@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// -webkit-box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+// -moz-box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+// box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+
 
 $gray: gray;
+$main_color: #00BD9C;
+$docs_color: #F63f2b;
+
 
 // ________________________________________
 // DASHBOARDS INDEX VIEW
@@ -16,7 +23,11 @@ $gray: gray;
 
 
 .dash-flex-child {
-border: 2px solid black;
+  border: 1px solid #00bd9c;
+  -webkit-box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+border-radius: 15px;
 padding:3em;
 max-width: 35em;
 
@@ -36,7 +47,18 @@ max-width: 35em;
   display: block;
   margin: 4px;
   text-align: center;
-  // border: 1px solid black;
+
+}
+
+#dashboard_list > a {
+  display: block;
+  margin: 4px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  &:hover{
+    color:#00BD9C;
+  }
 }
 
 #dashboard_join {
@@ -48,12 +70,20 @@ max-width: 35em;
   text-align: center;
 }
 
-#dashboard_links {
-  display: block;
-  margin: 4px;
-  // border: 1px solid black;
-  // background: yellow;
-  min-height: 10em;
+#dashboard_links > a{
+  color: white;
+  font-size: 1em;
+  &:hover{
+    color:#00BD9C;
+  }
+}
+
+#dashboard_new > a{
+  color: white;
+  font-size: 1em;
+  &:hover{
+    color:#00BD9C;
+  }
 }
 
 .each_dashboard {
@@ -88,7 +118,8 @@ max-width: 35em;
 
 
 #main > aside {
-  background: red;
+  background: $main_color;
+  border-radius: 15px;
   margin: 1em;
   order: 2;
   flex: 1 1 40%;
@@ -107,13 +138,15 @@ max-width: 35em;
   padding: 0px;
   flex-flow: row;
   min-height: 300px;
+  text-align: center;
 }
 
 .chat {
   flex: 3 1 75%;
-  background: pink;
+  border:1px solid black;
   margin: 1em;
   order: 1
+
 
 
 }
@@ -128,11 +161,13 @@ max-width: 35em;
 .docs {
   flex: 1 1 25%;
   display:flex;
-  background: yellow;
+  background: lighten($docs_color, 10%);
+  border-radius: 15px;
   margin: 1em;
   order: 2;
   align-items: center;
   justify-content: center;
+  color:white;
 }
 
 
@@ -147,7 +182,11 @@ max-width: 35em;
   max-width: 32em;
   min-height: 5em;
   border-radius: 5px;
+  border: 1px solid #00BD9C;
   background-color: white;
+  -webkit-box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
+box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 }
 
 
@@ -174,3 +213,52 @@ max-width: 35em;
 //     max-height: 50px;
 //   }
 // }
+
+
+.standard-button{
+    color: #fff;
+    background-color: #1abc9c;
+    padding: 1em 2em;
+    width: 20em;
+    font-family: 'Helvatica', sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+.change-color{
+    display: inline-block;
+    transition: 0.4s all;
+
+}
+
+.change-color:hover, .change-color:focus, .change-color:active{
+    color: #fff;
+    background-color:  #e74c3c;
+}
+
+/*
+    Radius adds a nifty border radius on hover
+*/
+
+.radius{
+    transition-duration: 0.4s;
+    transition-property: border-radius;
+    transform: translateZ(0);
+
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-property: border-radius;
+    -webkit-transform: translateZ(0);
+
+}
+
+.radius:hover, .radius:focus, .change-color:active{
+    border-radius: 1em;
+}
+
+
+.dashboard_name {
+  font-size: 2em;
+  max-width: 25em;
+  text-align: center;
+  margin:auto;
+}

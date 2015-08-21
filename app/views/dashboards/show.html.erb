@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @dashboard.title %>
-</p>
+<div class="dashboard_name"><%= @dashboard.title %></div>
 
 <!-- XXXXXXXXXX - Calendar Section XXXXXXXXXXXXX -->
 <div id="main">
@@ -31,12 +28,13 @@
       </thead> -->
 
 
-        <% @dashboard.news_feeds.each do |news_feed| %>
+        <% @last_three.each do |news_feed| %>
           <div class="each_news_event">
               <strong><%= link_to news_feed.title, news_feed %> </strong>
               <br>
               <br>
-              <%= news_feed.body %>
+              <%= news_feed.body.truncate(60) %>
+              <%#= news_feed.body.truncate(60) %>
               <br>
 
             <%= link_to 'Show', news_feed %>
@@ -45,8 +43,7 @@
           </div>
           <br>
         <% end %>
-      </tbody>
-    </table>
+
     <!-- Subsection - News Feed Dashboard Subs -->
     <div ="news_feed" class>
       <%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %>
@@ -64,7 +61,7 @@
 
   <div id="dashboard_bottom_row">
       <div class="chat">
-        <p>This is the chat feature</p>
+        <div id="tlkio" data-channel="Dashboard" style="width:800px;height:250px;"></div><script async src="http://tlk.io/embed.js" type="text/javascript"></script>
       </div>
 
     <div class="docs">
