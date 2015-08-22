@@ -5,7 +5,7 @@ class Dashboard < ActiveRecord::Base
   has_many :uploads, dependent: :destroy
   has_many :news_feeds, dependent: :destroy
 
-  validates :user_id, presence: true
+  validates :user, presence: true
   validates :token, uniqueness: true
 
 
@@ -13,6 +13,7 @@ class Dashboard < ActiveRecord::Base
     where("token LIKE ?", "%#{search}%")
   end
 
+  # this is bad
   def set_user(user)
     self.user_id = user.id
   end

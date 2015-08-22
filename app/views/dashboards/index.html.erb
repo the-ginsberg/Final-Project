@@ -8,9 +8,8 @@
     </div>
 
     <div id="dashboard_list">
-      <h2>Your Dashboards</h2>
+      <h2>Owned Dashboards</h2>
       <% @dashboards.each do |dashboard| %>
-
       <% if @user.id == dashboard.user_id %>
       <div class="each_dashboard">
         <%= dashboard.title %>
@@ -19,10 +18,26 @@
         <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
     </div>
     <br>
-    <% else %>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
+
+  <div id="dashboard_list">
+    <h2>Joined Dashboards</h2>
+    <% @dashboards.each do |dashboard| %>
+      <% dashboard.dashboard_memberships.each do |x| %>
+        <% if x.member_id == @user.id %>
+    <div class="each_dashboard">
+      <%= dashboard.title %>
+      <%= link_to 'Show', dashboard, class:"dashboard_links" %>
+      <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
+      <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
+    </div>
+        <% end %>
+  <br>
+    <% end %>
+  <% end %>
+</div>
 
   <div id="dashboard_join">
     <h3>Join a Dashboard</h3>

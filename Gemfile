@@ -11,8 +11,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'dotenv-rails', :groups => [:development, :test]
-
-
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

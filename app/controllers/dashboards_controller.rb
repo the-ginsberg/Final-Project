@@ -12,7 +12,21 @@ class DashboardsController < ApplicationController
   def search
     @dashboard = Dashboard.find_by(token: params[:search])
     @news_feed = NewsFeed.new
-    render 'show'
+    if @dashboard != nil
+      @dashboard.dashboard_memberships.each do |y|
+        if y.member_id == current_user.id && y.dashboard_id == @dashboard.id
+          puts "already a member of this Dashboard"
+        else
+          join = DashboardMembership.create
+          join.member_id = current_user.id
+          join.dashboard_id = @dashboard.id
+          join.save
+        end
+      end
+      render 'show'
+    else
+      redirect_to dashboards_path
+    end
   end
 
 
