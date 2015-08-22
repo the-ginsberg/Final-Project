@@ -5,6 +5,9 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+
+
+
   def index
     @events = @dashboard.events
     #@events = Event.all
@@ -78,6 +81,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date, :dashboard_id)
+      params.require(:event).permit(:name, :date, :time, :end_time, :dashboard_id)
     end
 end
