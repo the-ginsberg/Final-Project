@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :events
   get 'calendar/show'
 
   get 'uploads/new'
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   resources :dashboards, shallow: true do
     resources :uploads
     resources :news_feeds
+    resources :events
   end
 
   devise_for :users

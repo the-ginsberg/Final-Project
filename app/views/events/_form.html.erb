@@ -19,6 +19,9 @@
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
+
+  <%= f.hidden_field :dashboard_id, value: @dashboard.id %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

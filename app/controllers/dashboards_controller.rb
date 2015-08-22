@@ -24,6 +24,8 @@ class DashboardsController < ApplicationController
     # @news_feeds = NewsFeed.all
     @last_three = NewsFeed.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
     @uploads = Upload.all
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @events_by_date = @dashboard.events.group_by(&:date)
   end
 
   # GET /dashboards/new
