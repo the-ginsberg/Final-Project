@@ -12,7 +12,15 @@ class DashboardsController < ApplicationController
   def search
     @dashboard = Dashboard.find_by(token: params[:search])
     @news_feed = NewsFeed.new
-    render 'show'
+    if @dashboard != nil
+          join = DashboardMembership.create
+          join.member_id = current_user.id
+          join.dashboard_id = @dashboard.id
+          join.save
+          render 'show'
+    else
+      redirect_to dashboards_path
+    end
   end
 
 
