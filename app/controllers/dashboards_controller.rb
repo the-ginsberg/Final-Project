@@ -20,6 +20,7 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1.json
   def show
     @news_feed = NewsFeed.new
+    @event = Event.new
     @upload = Upload.new
     # @news_feeds = NewsFeed.all
     @last_three = NewsFeed.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
@@ -84,7 +85,7 @@ class DashboardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dashboard
-        @dashboard = Dashboard.find(params[:id])
+      @dashboard = Dashboard.find(params[:id])
     end
 
     def generate_token

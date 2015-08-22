@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :uploads
   resources :news_feeds
+  resources :events
 
   resources :dashboards, shallow: true do
     resources :uploads

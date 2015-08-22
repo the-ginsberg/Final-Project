@@ -1,10 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_dashboard, only: [:new, :index]
+  before_action :authenticate_user!
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = @dashboard.events
+    #@events = Event.all
   end
 
   # GET /events/1
@@ -14,7 +17,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = @dashboard.events.new
   end
 
   # GET /events/1/edit
@@ -69,8 +72,12 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
+    def set_dashboard
+        @dashboard = Dashboard.find(params[:dashboard_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date)
+      params.require(:event).permit(:name, :date, :dashboard_id)
     end
 end
