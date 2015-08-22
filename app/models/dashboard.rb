@@ -1,10 +1,11 @@
 class Dashboard < ActiveRecord::Base
-  has_many :invites
-  has_many :users, through: :invites
+  belongs_to :user
+  has_many :dashboard_memberships
+  has_many :members, through: :dashboard_memberships
   has_many :uploads, dependent: :destroy
   has_many :news_feeds, dependent: :destroy
 
-  validates :user_id, presence: true
+  validates :user, presence: true
   validates :token, uniqueness: true
 
 
@@ -12,6 +13,7 @@ class Dashboard < ActiveRecord::Base
     where("token LIKE ?", "%#{search}%")
   end
 
+  # this is bad
   def set_user(user)
     self.user_id = user.id
   end
