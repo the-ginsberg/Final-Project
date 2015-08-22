@@ -27,27 +27,28 @@
         </tr>
       </thead> -->
 
+        <% if @last_three != nil %>
+          <% @last_three.each do |news_feed| %>
+            <div class="each_news_event">
+                <strong><%= link_to news_feed.title, news_feed %> </strong>
+                <br>
+                <br>
+                <%= news_feed.body.truncate(60) %>
+                <%#= news_feed.body.truncate(60) %>
+                <br>
 
-        <% @last_three.each do |news_feed| %>
-          <div class="each_news_event">
-              <strong><%= link_to news_feed.title, news_feed %> </strong>
-              <br>
-              <br>
-              <%= news_feed.body.truncate(60) %>
-              <%#= news_feed.body.truncate(60) %>
-              <br>
-
-            <%= link_to 'Show', news_feed %>
-            <%= link_to 'Edit', edit_news_feed_path(news_feed) %>
-            <%= link_to 'Destroy', news_feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Show', news_feed %>
+              <%= link_to 'Edit', edit_news_feed_path(news_feed) %>
+              <%= link_to 'Destroy', news_feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+            <br>
+          <% end %>
+        <% else %>
+          <!-- Subsection - News Feed Dashboard Subs -->
+          <div ="news_feed" class>
+            <%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %>
           </div>
-          <br>
         <% end %>
-
-    <!-- Subsection - News Feed Dashboard Subs -->
-    <div ="news_feed" class>
-      <%= link_to 'New Event', new_dashboard_news_feed_path(@dashboard.id) %>
-    </div>
   </div>
   </aside>
 
