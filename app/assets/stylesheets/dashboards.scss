@@ -11,7 +11,7 @@ $gray: gray;
 $main_color: #00BD9C;
 $docs_color: #F63f2b;
 $teal: #00be9c;
-
+$chat: #589bff;
 
 // ________________________________________
 // DASHBOARDS INDEX VIEW
@@ -155,7 +155,8 @@ color:white;
 
 .chat {
   flex: 3 1 75%;
-  border:2px solid #589bff;
+  border:5px solid #589bff;
+
   border-radius: 15px;
   margin: 1em;
   order: 1
@@ -181,7 +182,7 @@ color:white;
   order: 2;
   align-items: center;
   justify-content: center;
-  color:white;
+  color:black;
 }
 
 

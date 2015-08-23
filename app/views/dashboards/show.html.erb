@@ -88,14 +88,19 @@
     <div class="docs">
       <div class="docs_child">
         <%= image_tag ("doc-white-background.png") %>
-        <p>Documents</p>
-
-
+        <br>
+        <%= link_to 'View Documents', dashboard_uploads_path(@dashboard.id) %>
+        <br>
+        <br>
+        <% if current_user.id == @dashboard.user_id %>
         <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
-            <%= file_field_tag :file  %>
             <%= hidden_field_tag :dashboard_id, "#{@dashboard.id}" %>
-            <%= submit_tag 'Upload file' %>
+            <% if current_user.id == @dashboard.user_id %>
 
+            <%= file_field_tag :file  %>
+            <%= submit_tag 'Upload file' %>
+            <%end %>
+        <% end %>
 
 
         <% end %>

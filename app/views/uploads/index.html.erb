@@ -1,16 +1,14 @@
-<div class="uploads_list">
-
-
+<div class="devise_flexbox_container">
+  <div class="user_form"
 <div class="row">
-          <% @uploads.each do |upload| %>
+          <% @dashboard.uploads.each do |upload| %>
 
             <div class="col-md-4 portfolio-item">
-
-                <%= image_tag ("document.png") %>
-                <h3 class ="index_center"><%= link_to upload.name, upload.url%></h3>
+              <h3 class ="index_center"><%= link_to upload.name, upload.url%></h3>
             </div>
 
           <% end %>
 
         </div>
+</div>
 </div>
