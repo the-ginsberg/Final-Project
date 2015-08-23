@@ -95,7 +95,7 @@ h2 > a {
   padding:3em;
   max-width: 35em;
   margin:auto;
-  margin-top: 8em;
+  margin-top: 3em;
   border-radius: 15px;
   -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
   -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
@@ -304,3 +304,5 @@ input[type="checkbox"]{
     display: none;
   }
 }
+
+// Overrides the phone field turning yellow
