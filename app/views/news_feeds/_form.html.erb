@@ -2,7 +2,7 @@
 <%= form_for(@news_feed) do |f| %>
   <% if @news_feed.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@news_feed.errors.count, "error") %> prohibited this news_feed from being saved:</h2>
+      <h2><%= pluralize(@news_feed.errors.count, "error") %> prohibited this announcement from being saved:</h2>
 
       <ul>
       <% @news_feed.errors.full_messages.each do |message| %>

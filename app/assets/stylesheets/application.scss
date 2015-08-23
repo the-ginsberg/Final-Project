@@ -14,7 +14,7 @@ $btn-padding: 1rem;
 $form-color: #00BD9C;
 $submit-button: #FF6666;
 $gray: gray;
-$links: gray;
+$links: #F63f2b;
 $teal: #00be9c;
 // ______________________________________________
 // Button styling
@@ -35,7 +35,7 @@ td{
 
 a {
   text-decoration: none;
-  color:$links;
+  color:lighten($links, 5%);
   font-size: 1.2em;
   &:hover {
     text-decoration: none;

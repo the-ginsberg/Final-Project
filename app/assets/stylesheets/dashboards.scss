@@ -167,7 +167,7 @@ color:white;
 .docs {
   flex: 1 1 25%;
   display:flex;
-  background: lighten($docs_color, 10%);
+  border:2px solid $docs_color;
   border-radius: 15px;
   margin: 1em;
   order: 2;

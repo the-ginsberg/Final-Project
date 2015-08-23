@@ -33,7 +33,7 @@ class NewsFeedsController < ApplicationController
 
     respond_to do |format|
       if @news_feed.save
-        format.html { redirect_to @news_feed, notice: 'Newsfeed was successfully created.' }
+        format.html { redirect_to @news_feed, notice: 'Announcement was successfully created.' }
         format.json { render :show, status: :created, location: @news_feed }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class NewsFeedsController < ApplicationController
   def update
     respond_to do |format|
       if @news_feed.update(news_feed_params)
-        format.html { redirect_to @news_feed, notice: 'News feed was successfully updated.' }
+        format.html { redirect_to @news_feed, notice: 'Announcement was successfully updated.' }
         format.json { render :show, status: :ok, location: @news_feed }
       else
         format.html { render :edit }
