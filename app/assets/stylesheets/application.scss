@@ -103,7 +103,7 @@ font-size: 1.5em;
   padding:3em;
   max-width: 35em;
   margin:auto;
-  margin-top: 1em;
+  margin-top: 8em;
   border-radius: 15px;
   -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
   -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
@@ -112,11 +112,16 @@ font-size: 1.5em;
 
 
 .user_form_wide {
-  background:$form-color;
+  border: 2px solid $form-color;
   padding:3em;
   max-width: 50em;
+  margin-top: 3em;
   margin:auto;
   border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
 }
 
 .show_form {
