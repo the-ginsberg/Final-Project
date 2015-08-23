@@ -2,29 +2,22 @@
 <html>
 <head>
   <title><%= t(:site_title) %></title>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <!--
+  <%# The link below is for the font awesome icons utilized throughout - MT %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  -->
   <link href='//fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
   <%= csrf_meta_tags %>
-  <!-- The link below is for the font awesome icons utilized throughout - MT -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body class="full_background_gradient">
 
-<%= render 'layouts/nav' %>
+<!-- Random body class added to apply the full image in background! -->
 
+<body class="full_image">
 
-<%= yield %>
-
-<%# render 'layouts/footer' %>
+  <%= yield %>
 
 </body>
 </html>

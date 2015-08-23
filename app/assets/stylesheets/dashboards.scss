@@ -31,6 +31,7 @@ $teal: #00be9c;
 border-radius: 15px;
 padding:3em;
 max-width: 35em;
+margin-top: 3em;
 
 }
 
@@ -280,6 +281,10 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
   text-align: center;
 }
 
+#dashboard_link_center > a:hover {
+  color: $teal;
+}
+
 .notice {
   font-family: 'Architects Daughter', sans-serif;
   color:red;
@@ -303,4 +308,20 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 
 .well.controls {
 padding:1em;
+}
+
+
+.hello {
+  color: $teal;
+  font-weight: bold;
+}
+
+
+table.calendar {
+  width: 100%;
+  th, td {
+    text-align: center;
+    border: 1px solid white;
+    height: 2em;
+  }
 }

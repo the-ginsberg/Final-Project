@@ -3,7 +3,7 @@
 <div class="dashboard_flexbox_container">
   <div class="dash-flex-child">
     <div id="title">
-      <h1>Hello <%= @user.name %>!</h1>
+      <h1 class="hello">Hello <%= @user.name %>!</h1>
     </div>
     <div id="dashboard_list">
       <h3>Owned Dashboards</h3>
@@ -25,7 +25,9 @@
     <br>
       <% end %>
     <% end %>
-
+    <div id="dashboard_link_center">
+      <%= link_to 'New Dashboard', new_dashboard_path %>
+    </div>
   </div>
 
   <div id="dashboard_list">
@@ -54,9 +56,7 @@
   </div>
 
 
-    <div id="dashboard_link_center">
-      <%= link_to 'New Dashboard', new_dashboard_path %>
-    </div>
+
 
 
 </div>

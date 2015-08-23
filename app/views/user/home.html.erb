@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>FinalProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag "bootstrap.min", "sb-admin" %>
-  <%= csrf_meta_tags %>
-  <!-- The link below is for the font awesome icons utilized throughout - MT -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
+<div class="center">
+  <h1>Welcome To GroupBoard</h1>
 
-<!-- Random body class added to apply the full image in background! -->
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<body class="full_image">
-
-
-
-    <div class="center">
-    <h1>Welcome To GroupBoard</h1>
-
-    <%= link_to 'Log-In', new_user_session_path, class: "btn btn-off-white" %>
-    <%= link_to 'Sign-up', new_user_registration_path, class: "btn btn-off-blue" %>
-
-    </div>
-
-    <%# render 'layouts/footer' %>
-
-</body>
-</html>
+  <%= link_to 'Log-In', new_user_session_path, class: "btn btn-off-white" %>
+  <%= link_to 'Sign-up', new_user_registration_path, class: "btn btn-off-blue" %>
+</div>
