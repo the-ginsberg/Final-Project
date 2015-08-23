@@ -10,6 +10,8 @@
       <% @dashboards.each do |dashboard| %>
       <% if @user.id == dashboard.user_id %>
 
+
+
       <div class="standard-button change-color radius">
         <h2><%= link_to dashboard.title, dashboard %></h2>
         <div id="dashboard_links">
@@ -18,6 +20,8 @@
           |
           <%= link_to 'Delete', dashboard, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
+
+
       </br>
     </div>
     <br>
