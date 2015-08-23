@@ -29,8 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 //   font-family: 'Cabin', sans-serif;
 // }
 
-td{
-  text-align: left;
+tr {
+  height:2em;
 }
 
 a {
@@ -39,9 +39,10 @@ a {
   font-size: 1.2em;
   &:hover {
     text-decoration: none;
-    color: white;
+    color: black;
   }
 }
+
 
 li {
   list-style-type: none;
@@ -127,6 +128,21 @@ h2 > a {
   box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
 }
 
+.form_top {
+  border: 2px solid $form-color;
+  padding:1em;
+  max-width: 50em;
+  margin-top: 8em;
+  margin:auto;
+  border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+}
+
+
+
 .show_form {
   font-size: 1em;
   background-color: white;
@@ -148,6 +164,7 @@ h2 > a {
 }
 
 .form_flexbox_container{
+  padding-top: 3em;
   display:flex;
   justify-content: center;
   align-items: center;

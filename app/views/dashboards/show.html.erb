@@ -85,58 +85,12 @@
 
         <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
             <%= file_field_tag :file  %>
-            <%= hidden_field :dashboard_id, value: @dashboard.id %>
+            <%= hidden_field_tag :dashboard_id, "#{@dashboard.id}" %>
             <%= submit_tag 'Upload file' %>
 
-            <%# @uploads.dashboard_id %>
+
 
         <% end %>
       </div>
     </div>
   </div>
-
-<!-- New News Feed Form -->
-
-  <!-- <h3>Add a news item!</h3>
-  <%= form_for [@dashboard, @news_feed] do |f| %>
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-</div> -->
-
-<!-- Uploads Shit Below HERE -->
-
-<!-- <div class="uploads_list">
-  <div class="row">
-    <% @dashboard.uploads.each do |upload| %>
-      <div class="col-md-4 portfolio-item">
-        <%= image_tag ("document.png") %>
-        <h3 class ="index_center"><%= link_to upload.name, upload.url%></h3>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<hr>
-
-<div class ="upload">
-  <p>This space is reserved for linking to uploads.</p>
-  <%= form_for @dashboard.uploads.new do |f| %>
-    <%= f.file_field :file  %>
-    <%= f.submit 'Upload file' %>
-  <% end %>
-</div> -->
-
-
-
-  <%= link_to 'Edit', edit_dashboard_path(@dashboard) %>
-  | <%= link_to 'Back', dashboards_path %>
