@@ -4,7 +4,7 @@ class Dashboard < ActiveRecord::Base
   has_many :members, through: :dashboard_memberships
   has_many :uploads, dependent: :destroy
   has_many :news_feeds, dependent: :destroy
-  has_many :events
+  has_many :events, dependent: :destroy
 
   validates :user, presence: true
   validates :token, uniqueness: true
