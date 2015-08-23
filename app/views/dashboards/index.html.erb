@@ -3,8 +3,7 @@
 <div class="dashboard_flexbox_container">
   <div class="dash-flex-child">
     <div id="title">
-      <h1>Hello
-        <%= @user.name %>!</h1>
+      <h1>Hello <%= @user.name %>!</h1>
     </div>
     <div id="dashboard_list">
       <h2>Owned Dashboards</h2>
@@ -22,8 +21,11 @@
       </br>
     </div>
     <br>
+    <br>
+    <br>
       <% end %>
     <% end %>
+
   </div>
 
   <div id="dashboard_list">
@@ -51,11 +53,11 @@
     <% end %>
   </div>
 
-  <div id="dashboard_list">
-    <div class="standard-button change-color radius">
+
+    <div>
       <%= link_to 'New Dashboard', new_dashboard_path %>
     </div>
-  </div>
+
 
 </div>
 </div>

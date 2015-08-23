@@ -12,25 +12,40 @@ $btn-border: 2px solid white;
 $btn-height: 40px;
 $btn-padding: 1rem;
 $form-color: #00BD9C;
-$submit-button: green;
+$submit-button: #FF6666;
 $gray: gray;
+$links: gray;
+$teal: #00be9c;
 // ______________________________________________
 // Button styling
 // ______________________________________________
-// .full_background_gradient {
-//     background-image: image-url("orange_gradient.jpg");
-//     height: 100vh; /*viewport height */
-//     background-size: cover;
-//     background-position: center;
+
 //
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Architects Daughter', sans-serif;
 }
+//
+// p {
+//   font-family: 'Cabin', sans-serif;
+// }
 
+td{
+  text-align: left;
+}
 
 a {
   text-decoration: none;
+  color:$links;
+  &:hover {
+    text-decoration: none;
+  }
 }
+
+li {
+  list-style-type: none;
+
+}
+
 
 h2 > a {
   font-size: 1em;
@@ -42,10 +57,13 @@ h2 > a {
 }
 
 
-
 body {
 box-sizing: border-box;
+font-family: 'Cabin';
+font-size: 1.5em;
 }
+
+
 
 .btn {
 
@@ -83,7 +101,7 @@ box-sizing: border-box;
   padding:3em;
   max-width: 35em;
   margin:auto;
-  margin-top: 8em;
+  margin-top: 1em;
   border-radius: 15px;
   -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
   -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
@@ -97,6 +115,21 @@ box-sizing: border-box;
   max-width: 50em;
   margin:auto;
   border-radius: 15px;
+}
+
+.show_form {
+  font-family: 'Cabin';
+  font-size: 1em;
+  background-color: white;
+  border: 2px solid $main_color;
+  width: 75em;
+  padding:3em;
+  margin:auto;
+  margin-top: 2em;
+  border-radius: 15px;
+  -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
+  box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
 }
 
 .devise_flexbox_container{
@@ -134,7 +167,7 @@ input[type="email"],[type="password"],[type="name"],
 }
 // Form submission buttons
 input[type="submit"]{
-background:$submit-button;
+background:#94b1c4;
 padding: 5px;
 margin-top: 10px;
 min-height: 2em;

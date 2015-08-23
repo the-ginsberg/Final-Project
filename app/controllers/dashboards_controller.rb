@@ -35,6 +35,7 @@ class DashboardsController < ApplicationController
     @uploads = Upload.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @events_by_date = @dashboard.events.group_by(&:date)
+    @only_three = Event.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
   end
 
   # GET /dashboards/new

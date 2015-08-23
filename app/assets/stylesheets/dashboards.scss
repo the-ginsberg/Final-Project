@@ -10,6 +10,7 @@
 $gray: gray;
 $main_color: #00BD9C;
 $docs_color: #F63f2b;
+$teal: #00be9c;
 
 
 // ________________________________________
@@ -38,7 +39,6 @@ max-width: 35em;
   margin: 4px;
   // border: 1px solid black;
   // background: blue;
-  min-height: 100px;
   text-align: center;
 }
 
@@ -108,10 +108,11 @@ max-width: 35em;
 }
 
 #main > article {
-  background: darken($gray, 10%);
+  background: $teal;
   margin: 1em;
   order: 1;
   flex: 3 1 60%;
+  border-radius: 15px;
 
 }
 
@@ -176,6 +177,8 @@ max-width: 35em;
 // ________________________________________
 // #dash_news_flex_cont {}
 .each_news_event {
+  font-family: 'Cabin';
+  font-size: 1em;
   padding:1em;
   text-align: justify;
   min-width: 30em;
@@ -218,9 +221,7 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 .standard-button{
     color: #fff;
     background-color: #1abc9c;
-    padding: 1em 2em;
     width: 20em;
-    font-family: 'Helvatica', sans-serif;
     text-decoration: none;
     text-align: center;
 }
