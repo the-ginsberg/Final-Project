@@ -6,7 +6,7 @@
       <h1>Hello <%= @user.name %>!</h1>
     </div>
     <div id="dashboard_list">
-      <h2>Owned Dashboards</h2>
+      <h3>Owned Dashboards</h3>
       <% @dashboards.each do |dashboard| %>
       <% if @user.id == dashboard.user_id %>
 
@@ -29,7 +29,7 @@
   </div>
 
   <div id="dashboard_list">
-    <h2>Joined Dashboards</h2>
+    <h3>Joined Dashboards</h3>
     <% @dashboards.each do |dashboard| %>
       <% dashboard.dashboard_memberships.each do |x| %>
         <% if x.member_id == @user.id %>

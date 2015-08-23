@@ -257,11 +257,17 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 }
 
 
-.dashboard_name {
+.dashboard_name > h3{
   font-size: 2em;
-  max-width: 25em;
+  max-width: 15em;
   text-align: center;
   margin:auto;
+  margin-top: 0.5em;
+
+  -webkit-box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
+box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
+
 }
 
 
