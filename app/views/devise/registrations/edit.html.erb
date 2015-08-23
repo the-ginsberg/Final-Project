@@ -2,6 +2,16 @@
   <div class="user_form">
   <h2>Edit Profile</h2>
 
+  <h3>Owned Dashboards</h3>
+  <% @dashboards = Dashboard.all %>
+  <% @dashboards.each do |dashboard| %>
+  <% if @user.id == dashboard.user_id %>
+  <%= dashboard.title %> Group Code:
+  <%= dashboard.token %>
+  <br>
+  <% end %>
+  <% end %>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -39,6 +49,6 @@
 </br>
   <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-  <%= link_to "Back", :back %>
+  <%= link_to "Back", dashboards_path %>
 </div>
 </div>

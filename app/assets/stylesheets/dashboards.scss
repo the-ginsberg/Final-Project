@@ -155,7 +155,8 @@ color:white;
 
 .chat {
   flex: 3 1 75%;
-  border:1px solid black;
+  border:2px solid #589bff;
+  border-radius: 15px;
   margin: 1em;
   order: 1
 
@@ -173,6 +174,7 @@ color:white;
 .docs {
   flex: 1 1 25%;
   display:flex;
+  background:yellow;
   border:2px solid $docs_color;
   border-radius: 15px;
   margin: 1em;
@@ -311,6 +313,7 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
   text-align: center;
 }
 
+
 .well.controls {
 padding:1em;
 }
@@ -323,10 +326,12 @@ padding:1em;
 
 
 table.calendar {
-  width: 100%;
+  text-align: center;
+
   th, td {
-    text-align: center;
-    border: 1px solid white;
-    height: 2em;
+    border: 2px solid white;
+    width:7.1em;
+    height: 3em;
+    align-items: center;
   }
 }

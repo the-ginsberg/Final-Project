@@ -1,11 +1,11 @@
 class Calendar < Struct.new(:view, :date, :callback)
-    HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+    HEADER = %w[Sun Mon Tue Wed Thu Fri Sat]
     START_DAY = :sunday
 
     delegate :content_tag, to: :view
 
     def table
-      content_tag :table, class: "calendar table table-bordered table-striped" do
+      content_tag :table, class: "calendar" do
         header + week_rows
       end
     end
