@@ -10,6 +10,16 @@
   <%= @event.date %>
 </p>
 
+<p>
+  <strong>Start Time:</strong>
+  <%= @event.time.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @event.end_time.strftime("%H:%M") %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', dashboard_path(@event.dashboard) %> |
 <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
