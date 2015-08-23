@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
 
-  before_action :set_dashboard, only: [:create, :new, :index]
+  before_action :set_dashboard, only: [:new, :index]
   before_action :authenticate_user!
 
   def index
@@ -37,8 +37,8 @@ private
 
 
   def set_dashboard
-    render plan: params.to_json
-    # @dashboard = Dashboard.find params[:dashboard_id]
+    # render plan: params.to_json
+    @dashboard = Dashboard.find params[:dashboard_id]
   end
 
 
