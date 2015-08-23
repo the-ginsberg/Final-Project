@@ -280,3 +280,22 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
   color:red;
   text-align: center;
 }
+
+.btn.btn-default {
+    font-size: 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    line-height: 5px;
+    align-items: center;
+}
+
+.calendar_title{
+  padding: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.well.controls {
+padding:1em;
+}
