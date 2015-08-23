@@ -30,6 +30,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    @dashboard = Dashboard.find(params[:event][:dashboard_id])
     @event = @dashboard.events.new
 
     respond_to do |format|
