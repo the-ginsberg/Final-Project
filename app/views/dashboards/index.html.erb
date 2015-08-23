@@ -35,11 +35,8 @@
     <% @dashboards.each do |dashboard| %>
       <% dashboard.dashboard_memberships.each do |x| %>
         <% if x.member_id == @user.id %>
-    <div class="each_dashboard">
-      <%= dashboard.title %>
-      <%= link_to 'Show', dashboard, class:"dashboard_links" %>
-      <%= link_to 'Edit', edit_dashboard_path(dashboard), class:"dashboard_links" %>
-      <%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' }, class:"dashboard_links" %></p>
+    <div class="standard-button change-color radius">
+      <%= link_to dashboard.title, dashboard %>
     </div>
         <% end %>
     <% end %>
