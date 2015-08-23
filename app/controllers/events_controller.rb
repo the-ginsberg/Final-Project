@@ -30,7 +30,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @event = @dashboard.events.new
 
     respond_to do |format|
       if @event.save

@@ -16,16 +16,16 @@ class UploadsController < ApplicationController
       file: params[:file],
       acl: :public_read
     )
-
+    dashboard = Dashboard.find((params["dashboard_id"].first.first.first(-1).last(+1).to_i))
     # Create an object for the upload
-    @upload = @dashboard.uploads.new(
+    @upload = dashboard.uploads.new(
                           url: obj.public_url,
                           name: obj.key
                           )
 
     # Save the upload
     if @upload.save
-      redirect_to dashboard_path(params[:dashboard_id]), success: 'File successfully uploaded'
+      redirect_to dashboard_path(dashboard.id), success: 'File successfully uploaded'
     else
       flash.now[:notice] = 'There was an error'
       render :new

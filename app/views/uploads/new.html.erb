@@ -3,6 +3,6 @@
 <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
     <%= file_field_tag :file  %>
     <%= submit_tag 'Upload file' %>
-    <%# @uploads.dashboard_id %>
+    <%= @uploads.dashboard_id %>
 
 <% end %>

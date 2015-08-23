@@ -83,7 +83,16 @@
       <div class="docs_child">
         <%= image_tag ("document-square.png") %>
         <p>Documents</p>
-        <%= link_to 'New Document', uploads_new_path %>
+
+
+        <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
+            <%= file_field_tag :file  %>
+            <%= hidden_field :dashboard_id, value: @dashboard.id %>
+            <%= submit_tag 'Upload file' %>
+
+            <%# @uploads.dashboard_id %>
+
+        <% end %>
       </div>
     </div>
   </div>
