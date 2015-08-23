@@ -36,11 +36,14 @@ class NewsFeedsController < ApplicationController
       if @news_feed.save
         # Twilio
         @dashboard = Dashboard.find(params[:news_feed][:dashboard_id])
-        message = @client.account.messages.create(:body => "A new message has been posted in #{@dashboard.title}",
-        :to => "+19545527977",
-        :from => "+17548006045",
-        )
-        puts message.to
+        @dashboard.members.each do |member|
+          if member.phone_number != nil
+            message = @client.account.messages.create(:body => "A new message has been posted in #{@dashboard.title}",
+            :to => "+1#{member.phone_number}",
+            :from => "+17548006045",
+            )
+          end
+        end
         # Twilio End
         format.html { redirect_to @news_feed, notice: 'Announcement was successfully created.' }
         format.json { render :show, status: :created, location: @news_feed }
