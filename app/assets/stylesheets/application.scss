@@ -59,14 +59,6 @@ h2 > a {
 }
 
 
-body {
-box-sizing: border-box;
-font-family: 'Cabin';
-font-size: 1.5em;
-}
-
-
-
 .btn {
 
   font-size: 1rem;
@@ -103,7 +95,7 @@ font-size: 1.5em;
   padding:3em;
   max-width: 35em;
   margin:auto;
-  margin-top: 8em;
+  margin-top: 3em;
   border-radius: 15px;
   -webkit-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
   -moz-box-shadow: 13px 13px 20px -9px rgba(0,0,0,1);
@@ -190,8 +182,6 @@ input[type="checkbox"]{
   margin:8px;
 }
 
-
-
 // NAVBAR
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
@@ -203,7 +193,7 @@ input[type="checkbox"]{
   list-style: none;
   margin: 0;
   padding: 0;
-  line-height: 1;
+  line-height: 0;
   display: block;
   zoom: 1;
 }
@@ -234,7 +224,7 @@ input[type="checkbox"]{
   font-family: 'Architects Daughter',sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.9em;
   position: relative;
   -webkit-transition: color .25s;
   -moz-transition: color .25s;
@@ -314,3 +304,5 @@ input[type="checkbox"]{
     display: none;
   }
 }
+
+// Overrides the phone field turning yellow
