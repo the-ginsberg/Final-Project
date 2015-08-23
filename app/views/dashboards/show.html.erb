@@ -4,8 +4,9 @@
 <div id="main">
 
   <article>
-    <%= link_to 'New Event', new_dashboard_event_path(@dashboard.id), class: "center_new_event" %>
-
+    <div class="center_new_event">
+    <%= link_to 'New Event', new_dashboard_event_path(@dashboard.id)%>
+  </div>
     <div>
       <div class="calendar_title">
         <div class="well controls">

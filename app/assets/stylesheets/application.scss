@@ -36,8 +36,10 @@ td{
 a {
   text-decoration: none;
   color:$links;
+  font-size: 1.2em;
   &:hover {
     text-decoration: none;
+    color: white;
   }
 }
 

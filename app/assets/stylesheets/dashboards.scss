@@ -116,6 +116,11 @@ max-width: 35em;
 
 }
 
+.center_new_event {
+  text-align: center;
+  padding:1em;
+}
+
 
 
 #main > aside {
@@ -129,8 +134,8 @@ max-width: 35em;
   justify-content: center;
 }
 
-.main_child{
-// content inside of red box
+.main_child > h3{
+color:white;
 }
 
 #dashboard_bottom_row {
