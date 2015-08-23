@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
 
-  before_action :set_dashboard, only: [:new, :index]
+  before_action :set_dashboard, only: :index
   before_action :authenticate_user!
 
   def index
