@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'twilio-ruby'
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

@@ -1,6 +1,7 @@
 class NewsFeedsController < ApplicationController
   before_action :set_news_feed, only: [:show, :edit, :update, :destroy]
   before_action :set_dashboard, only: [:new, :index]
+  before_action :set_twilio_client, only: [:create]
   before_action :authenticate_user!
 
 
@@ -33,6 +34,14 @@ class NewsFeedsController < ApplicationController
 
     respond_to do |format|
       if @news_feed.save
+        # Twilio
+        @dashboard = Dashboard.find(params[:news_feed][:dashboard_id])
+        message = @client.account.messages.create(:body => "A new message has been posted in #{@dashboard.title}",
+        :to => "+19545527977",
+        :from => "+17548006045",
+        )
+        puts message.to
+        # Twilio End
         format.html { redirect_to @news_feed, notice: 'Announcement was successfully created.' }
         format.json { render :show, status: :created, location: @news_feed }
       else
@@ -74,6 +83,10 @@ class NewsFeedsController < ApplicationController
 
     def set_dashboard
         @dashboard = Dashboard.find(params[:dashboard_id])
+    end
+
+    def set_twilio_client
+      @client = Twilio::REST::Client.new ENV["account_sid"], ENV["auth_token"]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
