@@ -10,15 +10,15 @@ Rails.application.routes.draw do
 
   resources :uploads
   resources :events
+  resources :news_feeds
 
   resources :dashboards do
     resources :news_feeds
+    resources :events
   end
 
   resources :dashboards, shallow: true do
     resources :uploads
-    resources :news_feeds
-    resources :events
   end
 
   devise_for :users

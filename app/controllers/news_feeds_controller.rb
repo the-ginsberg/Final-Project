@@ -18,7 +18,7 @@ class NewsFeedsController < ApplicationController
 
   # GET /news_feeds/new
   def new
-    @news_feed = @dashboard.news_feeds.new
+    @news_feed = NewsFeed.new
   end
 
   # GET /news_feeds/1/edit
@@ -31,6 +31,7 @@ class NewsFeedsController < ApplicationController
     # render plain: params.to_json
 
     @news_feed = NewsFeed.new(news_feed_params)
+    @news_feed.dashboard_id = @news_feed[:dashboard_id]
 
     respond_to do |format|
       if @news_feed.save
@@ -73,7 +74,7 @@ class NewsFeedsController < ApplicationController
   def destroy
     @news_feed.destroy
     respond_to do |format|
-      format.html { redirect_to news_feeds_url, notice: 'News feed was successfully destroyed.' }
+      format.html { redirect_to dashboards_path, notice: 'News feed was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
