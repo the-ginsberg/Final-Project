@@ -14,13 +14,22 @@
     <div class="div_cal">
       <div class="calendar_title">
         <div class="well controls">
-          <%= link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do %>
-            <i class="glyphicon glyphicon-backward"></i>
+
+          <div class="inline_calendar">
+          <div class="cal_title">
+          <%= link_to calendar_path(date: @date - 1.month) do %>
+            <i class="fa fa-arrow-left"></i>
           <% end %>
-          <p class ="calendar_month"><%= "#{@date.strftime("%B")} #{@date.year}" %></p>
-          <%= link_to calendar_path(date: @date + 1.month), class: "btn btn-default" do %>
-            <i class="glyphicon glyphicon-forward"></i>
+        </div>
+        <div class="cal_title">
+          <div class="calendar_month"><%= "#{@date.strftime("%B")} #{@date.year}" %></div>
+        </div>
+        <div class="cal_title">
+          <%= link_to calendar_path(date: @date + 1.month) do %>
+            <i class="fa fa-arrow-right"></i>
           <% end %>
+        </div>
+        </div>
         </div>
       </div>
     </div>

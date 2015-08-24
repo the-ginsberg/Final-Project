@@ -90,6 +90,7 @@ margin-top: 3em;
 #dashboard_links > a{
   color: white;
   font-family: 'Cabin', sans-serif;
+
   font-size: 1em;
   &:hover{
     color:#00BD9C;
@@ -327,9 +328,7 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 }
 
 
-.well.controls {
-padding:1em;
-}
+
 
 
 .hello {

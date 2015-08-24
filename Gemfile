@@ -13,6 +13,8 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twilio-ruby'
+gem 'jquery-turbolinks'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

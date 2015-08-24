@@ -346,6 +346,23 @@ input[type="checkbox"]{
   font-family: 'Cabin', sans-serif;
 }
 
-span#channel.background_channel {
-color:green;
+
+.calendar_month {
+  font-family: 'Cabin', white;
+  color:white;
+}
+
+
+
+.well.controls {
+padding:1em;
+}
+
+.inline_calendar {
+  display: flex;
+}
+
+.cal_title {
+align-items: center;
+margin: auto;
 }
