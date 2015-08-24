@@ -14,6 +14,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twilio-ruby'
 gem 'jquery-turbolinks'
+gem "combined_time_select", "~> 1.0.1"
 
 group :development do
   gem "better_errors"
