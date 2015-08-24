@@ -89,7 +89,7 @@ class NewsFeedsController < ApplicationController
     end
 
     def set_twilio_client
-      @client = Twilio::REST::Client.new ENV["account_sid"], ENV["auth_token"]
+      @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
