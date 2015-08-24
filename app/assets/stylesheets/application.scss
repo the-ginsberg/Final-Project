@@ -51,6 +51,11 @@ li {
 
 }
 
+.log_in_links {
+  padding-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.8em;
+}
 
 h2 > a {
   font-size: 1em;
@@ -186,6 +191,7 @@ h2 > a {
 input[type="email"],[type="password"],[type="name"],
 [type="text"]{
   padding: 5px;
+  font-family: 'Cabin', sans-serif;
   min-height: 2em;
   border-radius: 5px;
   min-width:25em;
@@ -196,11 +202,12 @@ input[type="email"],[type="password"],[type="name"],
 // Form submission buttons
 input[type="submit"],[type="file"]{
 background:#94b1c4;
+font-family: 'Cabin', sans-serif;
 padding: 5px;
 margin-top: 10px;
 min-height: 2em;
 border-radius: 5px;
-min-width:10em;
+max-width:15em;
 -webkit-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
 box-shadow: 0px 3px 7px -2px rgba(0,0,0,0.75);
@@ -335,4 +342,10 @@ input[type="checkbox"]{
   }
 }
 
-// Overrides the phone field turning yellow
+.index_center {
+  font-family: 'Cabin', sans-serif;
+}
+
+span#channel.background_channel {
+color:green;
+}
