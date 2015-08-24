@@ -12,6 +12,8 @@ $main_color: #00BD9C;
 $docs_color: #F63f2b;
 $teal: #00be9c;
 $chat: #589bff;
+$yellow: #e5f986;
+$pom: #F63f2b;
 
 // ________________________________________
 // DASHBOARDS INDEX VIEW
@@ -22,7 +24,14 @@ $chat: #589bff;
   align-items: center;
 }
 
+a.white_links {
+  color:white;
+}
 
+a.white_links_small {
+  color:white;
+  font-size: 0.8em;
+}
 
 .dash-flex-child {
   border: 1px solid #00bd9c;
@@ -130,7 +139,7 @@ margin-top: 3em;
 
 
 #main > aside {
-  background: $main_color;
+  background: $teal;
   border-radius: 15px;
   margin: 1em;
   order: 2;
@@ -155,8 +164,7 @@ color:white;
 
 .chat {
   flex: 3 1 75%;
-  border:5px solid #589bff;
-
+  border:5px solid $teal;
   border-radius: 15px;
   margin: 1em;
   order: 1
@@ -175,8 +183,7 @@ color:white;
 .docs {
   flex: 1 1 25%;
   display:flex;
-  background:yellow;
-  border:2px solid $docs_color;
+  background:$teal;
   border-radius: 15px;
   margin: 1em;
   order: 2;
@@ -287,6 +294,7 @@ box-shadow: 9px 8px 5px -5px rgba(0,0,0,0.75);
 
 #dashboard_link_center {
   text-align: center;
+  color: $pom;
 }
 
 #dashboard_link_center > a:hover {
@@ -325,14 +333,22 @@ padding:1em;
   font-weight: bold;
 }
 
+.calendar_icon {
+  align-items: center;
+}
 
 table.calendar {
-  text-align: center;
+  text-align: left;
+  padding-left: 2px;
+  vertical-align: text-top;
 
   th, td {
     border: 2px solid white;
     width:7.1em;
     height: 3em;
     align-items: center;
+    vertical-align: top;
+    padding-left: 2px;
+    padding-top: 2px;
   }
 }

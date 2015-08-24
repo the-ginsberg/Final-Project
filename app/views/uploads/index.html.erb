@@ -1,14 +1,15 @@
 <div class="devise_flexbox_container">
-  <div class="user_form"
-<div class="row">
-          <% @dashboard.uploads.each do |upload| %>
+  <div class="user_form">
+    <div class="row">
+      <% @dashboard.uploads.each do |upload| %>
 
-            <div class="col-md-4 portfolio-item">
-              <h3 class ="index_center"><%= link_to upload.name, upload.url%></h3>
-            </div>
+      <div>
+        <h3 ="index_center" class><%= link_to upload.name, upload.url%></h3>
+      </div>
 
-          <% end %>
+      <% end %>
 
-        </div>
-</div>
+    </div>
+  </div>
+
 </div>

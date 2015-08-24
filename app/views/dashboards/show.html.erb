@@ -7,7 +7,7 @@
   <article>
     <div class="center_new_event">
     <% if current_user.id == @dashboard.user_id %>
-    <%= link_to 'New Event', new_dashboard_event_path(@dashboard.id)%>
+    <%= link_to 'New Event', new_dashboard_event_path(@dashboard.id), class: "white_links" %>
     <% end %>
   </div>
 
@@ -30,11 +30,12 @@
         <%= calendar @date do |date| %>
           <%= date.day %>
           <% if @events_by_date[date] %>
-            <ul>
+
               <% @events_by_date[date].each do |event| %>
-                <li><%= link_to event.name.truncate(6), event %></li>
+                <%= link_to image_tag("calendar.png", class: "calendar_icon"), event %>
+
               <% end %>
-            </ul>
+          
           <% end %>
         <% end %>
       </div>
