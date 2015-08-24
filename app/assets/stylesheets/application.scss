@@ -9,13 +9,15 @@ $btn-off-white: white;
 $btn-off-blue: #00BD9C;
 $main_color: #00BD9C;
 $btn-border: 2px solid white;
-$btn-height: 40px;
+$btn-height: 20px;
 $btn-padding: 1rem;
 $form-color: #00BD9C;
 $submit-button: #FF6666;
 $gray: gray;
 $links: #F63f2b;
 $teal: #00be9c;
+$pink: #b90052;
+$pom: #F63f2b;
 // ______________________________________________
 // Button styling
 // ______________________________________________
@@ -35,7 +37,7 @@ tr {
 
 a {
   text-decoration: none;
-  color:lighten($links, 5%);
+  color:$pom;
   font-size: 1.2em;
   &:hover {
     text-decoration: none;
@@ -68,7 +70,6 @@ h2 > a {
   padding: 1rem 3rem;
   border-radius: 10px;
   text-decoration: none;
-
 }
 
 .btn-off-white {
