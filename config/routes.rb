@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   post 'dashboards/search'
 
   resources :uploads
-  resources :news_feeds
   resources :events
+
+  resources :dashboards do
+    resources :news_feeds
+  end
 
   resources :dashboards, shallow: true do
     resources :uploads
