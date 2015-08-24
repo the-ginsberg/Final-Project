@@ -24,7 +24,14 @@ $pom: #F63f2b;
   align-items: center;
 }
 
+a.white_links {
+  color:white;
+}
 
+a.white_links_small {
+  color:white;
+  font-size: 0.8em;
+}
 
 .dash-flex-child {
   border: 1px solid #00bd9c;
@@ -326,14 +333,22 @@ padding:1em;
   font-weight: bold;
 }
 
+.calendar_icon {
+  align-items: center;
+}
 
 table.calendar {
-  text-align: center;
+  text-align: left;
+  padding-left: 2px;
+  vertical-align: text-top;
 
   th, td {
     border: 2px solid white;
     width:7.1em;
     height: 3em;
     align-items: center;
+    vertical-align: top;
+    padding-left: 2px;
+    padding-top: 2px;
   }
 }
