@@ -35,7 +35,7 @@
                 <%= link_to image_tag("calendar.png", class: "calendar_icon"), event %>
 
               <% end %>
-          
+
           <% end %>
         <% end %>
       </div>
@@ -58,7 +58,7 @@
                 <br>
 
               <% if current_user.id == @dashboard.user_id %>
-              <%= link_to 'Edit', edit_news_feed_path(news_feed) %>
+              <%= link_to 'Edit', edit_dashboard_news_feed_path(news_feed.dashboard_id, news_feed) %>
               <%= link_to 'Destroy', news_feed, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
 
