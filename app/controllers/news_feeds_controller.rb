@@ -74,7 +74,7 @@ class NewsFeedsController < ApplicationController
   def destroy
     @news_feed.destroy
     respond_to do |format|
-      format.html { redirect_to dashboards_path, notice: 'News feed was successfully destroyed.' }
+      format.html { redirect_to dashboard_path(@news_feed.dashboard), notice: 'News feed was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
