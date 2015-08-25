@@ -16,7 +16,7 @@ class DashboardsController < ApplicationController
       if @dashboard == nil
         redirect_to dashboards_path
       elsif membership == nil
-        @news_feed = NewsFeed.new
+        @news_feed = @dashboards.news_feeds
         @events_by_date = @dashboard.events.group_by(&:date)
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
         join = DashboardMembership.create
@@ -29,7 +29,7 @@ class DashboardsController < ApplicationController
         @events_by_date = @dashboard.events.group_by(&:date)
         render 'show'
       else
-        @news_feed = NewsFeed.new
+        @news_feed = @dashboards.news_feeds
         @events_by_date = @dashboard.events.group_by(&:date)
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
         join = DashboardMembership.create
