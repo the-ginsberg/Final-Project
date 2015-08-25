@@ -11,8 +11,23 @@ class DashboardsController < ApplicationController
 
   def search
     @dashboard = Dashboard.find_by(token: params[:search])
+    membership = @dashboard.dashboard_memberships
+    cur_use_id = current_user.id
       if @dashboard == nil
         redirect_to dashboards_path
+      elsif membership == nil
+        @news_feed = NewsFeed.new
+        @events_by_date = @dashboard.events.group_by(&:date)
+        @date = params[:date] ? Date.parse(params[:date]) : Date.today
+        join = DashboardMembership.create
+        join.member_id = current_user.id
+        join.dashboard_id = @dashboard.id
+        join.save
+        render 'show'
+      elsif membership.find_by(member_id: cur_use_id) != nil
+        @date = params[:date] ? Date.parse(params[:date]) : Date.today
+        @events_by_date = @dashboard.events.group_by(&:date)
+        render 'show'
       else
         @news_feed = NewsFeed.new
         @events_by_date = @dashboard.events.group_by(&:date)
