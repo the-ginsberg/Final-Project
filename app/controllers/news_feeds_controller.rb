@@ -39,7 +39,7 @@ class NewsFeedsController < ApplicationController
         @dashboard = Dashboard.find(params[:news_feed][:dashboard_id])
         @dashboard.members.each do |member|
           if member.phone_number != nil
-            message = @client.account.messages.create(:body => "A new message has been posted in #{@dashboard.title}",
+            message = @client.account.messages.create(:body => "A new message has been posted in #{@dashboard.title}: Title: #{@news_feed.title} Announcement: #{@news_feed.body.truncate(140)}",
             :to => "+1#{member.phone_number}",
             :from => "+17548006045",
             )
