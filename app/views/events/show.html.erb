@@ -1,31 +1,32 @@
 
 <div class="form_flexbox_container">
   <div class="user_form cabin">
-  <p id="notice_new_event"><%= notice %></p>
+    <p id="notice_new_event"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+    <div id="toggle">
+      <p>
+        <strong>Name:</strong>
+        <%= @event.name %>
+      </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+      <p>
+        <strong>Date:</strong>
+        <%= @event.date %>
+      </p>
 
-<p>
-  <strong>Start Time:</strong>
-  <%= @event.time.strftime("%H:%M") %>
-</p>
+      <p>
+        <strong>Start Time:</strong>
+        <%= @event.time.strftime("%H:%M") %>
+      </p>
 
-<p>
-  <strong>End Time:</strong>
-  <%= @event.end_time.strftime("%H:%M") %>
-</p>
+      <p>
+        <strong>End Time:</strong>
+        <%= @event.end_time.strftime("%H:%M") %>
+      </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', dashboard_path(@event.dashboard) %> |
-<%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-</div>
+      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%= link_to 'Back', dashboard_path(@event.dashboard) %> |
+      <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
 </div>

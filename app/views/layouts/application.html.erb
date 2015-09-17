@@ -22,6 +22,11 @@
 
 <%= render 'layouts/nav' %>
 
+<% if flash[:error] %>
+  <p class="flash">
+    <%= flash[:error]%>
+  </p>
+<% end %>
 
 <%= yield %>
 

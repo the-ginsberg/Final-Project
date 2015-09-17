@@ -11,35 +11,14 @@ class DashboardsController < ApplicationController
 
   def search
     @dashboard = Dashboard.find_by(token: params[:search])
-    membership = @dashboard.dashboard_memberships
-    cur_use_id = current_user.id
-      if @dashboard == nil
-        redirect_to dashboards_path
-      elsif membership == nil
-        @news_feed = NewsFeed.new
-        @events_by_date = @dashboard.events.group_by(&:date)
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        join = DashboardMembership.create
-        join.member_id = current_user.id
-        join.dashboard_id = @dashboard.id
-        join.save
-        render 'show'
-      elsif membership.find_by(member_id: cur_use_id) != nil
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        @events_by_date = @dashboard.events.group_by(&:date)
-        render 'show'
-      else
-        @news_feed = NewsFeed.new
-        @events_by_date = @dashboard.events.group_by(&:date)
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        join = DashboardMembership.create
-        join.member_id = current_user.id
-        join.dashboard_id = @dashboard.id
-        join.save
-        render 'show'
-      end
+    if @dashboard.nil?
+      flash[:error] = "Sorry, that dashboard was not found."
+      redirect_to dashboards_path
+    else
+      @dashboard.find_or_create_member(current_user)
+      redirect_to @dashboard
+    end
   end
-
 
   # GET /dashboards/1
   # GET /dashboards/1.json
@@ -48,11 +27,10 @@ class DashboardsController < ApplicationController
     @event = Event.new
     @upload = Upload.new
     # @news_feeds = NewsFeed.all
-    @last_three = NewsFeed.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
+    @last_three = NewsFeed.items_for_dashboard(@dashboard)
     @uploads = Upload.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @events_by_date = @dashboard.events.group_by(&:date)
-    @only_three = Event.order("created_at DESC").limit(3).where(dashboard_id: @dashboard.id)
+    @events_by_date = @dashboard.events_by_date
   end
 
   # GET /dashboards/new

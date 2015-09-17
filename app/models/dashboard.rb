@@ -9,6 +9,11 @@ class Dashboard < ActiveRecord::Base
   validates :user, presence: true
   validates :token, uniqueness: true
 
+  def find_or_create_member(user)
+    if !members.include?(user)
+      members << user
+    end
+  end
 
   def self.search(search)
     where("token LIKE ?", "%#{search}%")
@@ -17,6 +22,11 @@ class Dashboard < ActiveRecord::Base
   # this is bad
   def set_user(user)
     self.user_id = user.id
+  end
+
+  def events_by_date
+    events.group_by(&:date)
+    # events.group_by{ |event| event.date }
   end
 
 end
