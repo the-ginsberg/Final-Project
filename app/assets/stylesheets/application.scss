@@ -372,3 +372,20 @@ padding:1em;
 align-items: center;
 margin: auto;
 }
+
+#dashboard_bottom_row{
+  form{
+    text-align: center;
+    input[type=file]{
+      background: none;
+      border: none;
+      box-shadow: none;
+      font-size: 15px;
+      border: 2px solid red;
+    }
+  }
+
+  .docs{
+    min-width: 240px;
+  }
+}
